@@ -1,0 +1,17 @@
+.DS_Store
+node_modules/
+npm-debug.log
+.bithoundrc
+jsconfig.json
+.vscode/
+platforms/
+plugins/
+
+Thumbs.db
+*.DS_Store
+
+*.bak
+*.cache
+*.log
+*.swp
+*.user
