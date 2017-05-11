@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta http-equiv="Content-Security-Policy" content="default-src 'self' data: gap: https://ssl.gstatic.com 'unsafe-eval' 'unsafe-inline' ws://*; style-src 'self' 'unsafe-inline'; media-src *; connect-src *; img-src * data:">
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no, minimal-ui">
+  <!-- PWA - Add to home screen settings for Safari on iOS -->    
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black">
+  <meta name="apple-mobile-web-app-title" content="Todo List">
+  <link rel="apple-touch-icon" href="img/icons/apple-touch-icon.png">
+  
+  <meta name="format-detection" content="telephone=no">
+  <meta name="msapplication-tap-highlight" content="no">
+
+  <!-- PWA - Pinned Tile for Windows -->
+  <meta name="msapplication-TileImage" content="img/icons/mstile-150x150.png">
+  <meta name="msapplication-TileColor" content="#2F3BA2">
+    
+  <style>
+    /* use this to hide elements until vue mount is fired */
+    [v-cloak] {
+      display:none;
+    }    
+  </style>
+
+  <script>   
+  if ('serviceWorker' in navigator) {
+      navigator.serviceWorker.register('service-worker.js')
+        .then(() => console.log('service worker installed'))
+        .catch(err => console.log('Error', err));
+  }
+  </script>  
+  
+  <!-- PWA Manifest -->
+  <link rel="manifest" href="manifest.json">
+    
+  <title>My Todo App</title>
+  <link rel="stylesheet" href="lib/framework7-icons/css/framework7-icons.css">
+
+  <!-- See js/init-styles.jswhere we load F7 style sheets based on platform -->
+  <link rel="stylesheet" href="css/app.css">  
+</head>
+
+<body>
+  
+  <div id="app" v-show="isMounted"> 
+
+    <!-- Statusbar -->
+    <f7-statusbar></f7-statusbar>    
+
+    <!-- Left Panel -->
+    <f7-panel id="side-panel" left :cover="isMaterial" reveal :layout="isiOS?'white':'dark'">        
+      <f7-list>
+        <f7-list-group>
+          <f7-list-item title="Default Categories" group-title></f7-list-item>
+          <f7-list-item id='ALL' title="ALL" 
+          :class="[sharedState.selectedCategory==='ALL' ? 'bg-blue' : '']" @click="filterCategory('ALL')"></f7-list-item>              
+          <f7-list-item id='NO CATEGORY' title="NO CATEGORY" @click="filterCategory('NO CATEGORY')" 
+          :class="[sharedState.selectedCategory==='NO CATEGORY' ? 'bg-blue' : '']"></f7-list-item>            
+        </f7-list-group>
+      </f7-list>
+
+      <f7-list>
+        <f7-list-group>
+          <f7-list-item title="Custom Categories" group-title></f7-list-item>
+          <f7-list-item v-if="(category!='ALL') && (category!='NO CATEGORY')"
+          v-for="category in categories" :class="[(category===sharedState.selectedCategory) ? 'bg-blue' : '']" :title="category" 
+          @click="filterCategory(category)" 
+          :id="category"></f7-list-item>        
+        </f7-list-group>
+      </f7-list>
+    </f7-panel>
+  
+    <!-- Views-->
+    <f7-views toolbar-through v-cloak>
+      
+      <!-- Main view-->
+      <f7-view id="main-view" :dynamic-navbar="true" navbar-through main> 
+
+        <f7-navbar sliding v-if="$theme.ios">
+          <f7-nav-left>
+            <f7-link icon-f7="bars" open-panel="side-panel"></f7-link>
+          </f7-nav-left>
+          <f7-nav-center>Todo List</f7-nav-center>
+          <f7-nav-right>
+            <f7-link icon-f7="add" open-popup="#todo-popup"></f7-link>        
+          </f7-nav-right>
+        </f7-navbar>
+     
+        <f7-pages>                 
+          <page-tabs/>
+          <!-- Make todo-item popup available to both tabs by including it here -->
+          <todo-item/> 
+        </f7-pages>    
+      </f7-view>            
+    </f7-views>    
+  </div>
+
+  <!-- Main Page Template (tabs) -->
+  <template id="page-tabs">
+    
+    <f7-page id="mainPage" data-page="mainPage" tabbar-fixed :with-subnavbar="isMaterial">       
+      <f7-navbar sliding>
+        <f7-nav-left>
+          <f7-link icon-f7="bars" open-panel="side-panel"></f7-link>
+        </f7-nav-left>
+        <f7-nav-center>Todo List</f7-nav-center>
+        <f7-nav-right>
+          <f7-link icon-f7="add" open-popup="#todo-popup"></f7-link>        
+        </f7-nav-right>
+     </f7-navbar>
+      
+      <f7-toolbar tabbar :labels="isiOS">
+          <f7-link :icon-f7="isiOS ? 'list' : ''" text="Pending" tab-link="#pending" active></f7-link>
+          <f7-link :icon-f7="isiOS ? 'check' : ''" text="Completed" tab-link="#completed"></f7-link>
+      </f7-toolbar>
+
+      <f7-tabs>
+        <f7-tab id="pending" active>
+          <page-pending />
+        </f7-tab>
+        <f7-tab id="completed">
+          <page-completed />
+        </f7-tab>      
+      </f7-tabs>
+      <todo-item/>
+    </f7-page>
+  </template>  
+
+  <!-- Pending Todos Page Template -->
+  <template id="page-pending">
+    <f7-page>
+        <f7-block-title>{{ title }}</f7-block-title> 
+        <f7-list v-if="todos.length > 0">      
+          <f7-list-item v-for="(todo, key) in todos" :key="key" v-if="displayItem(todo)"
+            :checked="(todo.completed ? true : false)" :data-index="key"
+            @click="onToggle(todo,key)" :title="(todo.urgent ? '<b><font color=red>!!</font></b> ' + todo.title : todo.title)" 
+            :class="[todo.highlight ? 'bg-yellow' : '']" swipeout checkbox>        
+          <f7-swipeout-actions>
+            <!--<f7-swipeout-button close @click="onItemEdited(todo)" color="green">Edit</f7-swipeout-button>-->
+            <f7-swipeout-button close @click="onItemDeleted(todo)" color="red">Delete</f7-swipeout-button>           
+          </f7-swipeout-actions>  
+          </f7-list-item>     
+        </f7-list>              
+        </f7-block>      
+    </f7-page>
+  </template>
+
+  <!-- Completed Tab Template -->
+  <template id="page-completed">
+    <f7-page>
+      <f7-block-title>{{ title }}</f7-block-title>  
+      <f7-list v-if="todos.length > 0">
+        <f7-list-item v-for="(todo, key) in todos" :key="key" 
+          :checked="(todo.completed ? true : false)" 
+          v-if="displayItem(todo)" @click="onToggle(todo, key)" 
+          :title="(todo.urgent ? '<b><font color=red>!!</font></b> ' + todo.title : todo.title)" 
+          :class="[todo.highlight ? 'bg-yellow' : '']" swipeout checkbox>
+        <f7-swipeout-actions>
+          <!--<f7-swipeout-button close @click="onItemEdited(todo)" open-popup color="green">Edit</f7-swipeout-button>-->
+          <f7-swipeout-button close @click="onItemDeleted(todo)" color="red">Delete</f7-swipeout-button>                   
+        </f7-swipeout-actions>        
+        </f7-list-item>            
+      </f7-list>                
+      </f7-block>
+    </f7-page>
+  </template>
+  
+  <template id="todo-item">  
+    <f7-popup id="todo-popup" tablet-fullscreen>        
+      <f7-block-title>ITEM DETAILS</f7-block-title>        
+        <f7-list form>
+            <f7-list-item>
+                <f7-input type="text" v-model="title" placeholder="What needs to be done?"/>            
+            </f7-list-item>
+            <f7-list-item>
+                <f7-input type="text" v-model="category" placeholder="Category"/>                                        
+            </f7-list-item>
+            <f7-list-item>
+                <f7-input  type="text" v-model="desc" placeholder="Description"/>
+            </f7-list-item>            
+            <f7-list-item checkbox name="highlight" v-model="highlight" title="Highlight" :checked="highlight"></f7-list-item>
+            <f7-list-item checkbox name="urgent" v-model="urgent" title="Urgent" :checked="urgent"></f7-list-item>                                  
+        </f7-list>                   
+       <f7-button @click="addNewTodo()" color="green" class="btn" big raised fill>Done</f7-button>
+       <f7-button @click="$f7.closeModal();" color="red" class="btn" big raised fill>Cancel</f7-button>                    
+    </f7-popup>    
+  </template>
+
+  <script src="cordova.js"></script> 
+  <script src="lib/framework7/js/framework7.min.js"></script>
+  <script src="lib/vue/vue.min.js"></script> 
+  <!-- Use below version for debugging with chrom vue tool --> 
+  <!--<script src="lib/vue/vue.js"></script>-->
+  <script src="lib/framework7-vue/framework7-vue.min.js"></script>
+  <script src="js/init-styles.js"></script>  
+  <script src="js/todos.js"></script>
+  <script src="js/app.js"></script>
+  
+</body>
+</html>

@@ -1,0 +1,21 @@
+{
+  "name": "pwa-workshop",
+  "version": "1.0.0",
+  "description": "A todo app built with PhoneGap/Framework7/VueJS which also runs as a Progressive Web App with offline support.",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/hollyschinsky/pwa-workshop"
+  },
+  "author": "Holly Schinsky",
+  "license": "Apache-2.0",
+  "keywords": [
+    "ecosystem:phonegap",
+    "ecosystem:cordova",
+    "cordova:template",
+    "phonegap:template"
+  ],
+  "bugs": {
+    "url": "https://github.com/hollyschinsky/pwa-workshop/issues"
+  },
+  "homepage": "https://github.com/hollyschinsky/pwa-workshop"
+}
