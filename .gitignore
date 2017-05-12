@@ -6,7 +6,7 @@ jsconfig.json
 .vscode/
 platforms/
 plugins/
-
+_site/
 Thumbs.db
 *.DS_Store
 

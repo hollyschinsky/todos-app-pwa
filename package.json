@@ -1,7 +1,7 @@
 {
   "name": "pwa-workshop",
   "version": "1.0.0",
-  "description": "A todo app built with PhoneGap/Framework7/VueJS which also runs as a Progressive Web App with offline support.",
+  "description": "A PhoneGap Todo App & Progressive Web App with Offline Support, built with Framework7+Vue.",
   "repository": {
     "type": "git",
     "url": "https://github.com/hollyschinsky/pwa-workshop"
