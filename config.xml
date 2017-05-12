@@ -2,7 +2,7 @@
 <widget id="org.mytodos.app" version="1.0.0" xmlns="http://www.w3.org/ns/widgets" xmlns:gap="http://phonegap.com/ns/1.0">
     <name>MyTodos</name>
     <description>
-       A PhoneGap Todo App & Progressive Web App with Offline Support, built with Framework7+Vue.
+       A PhoneGap Todo App / Progressive Web App with Offline Support, built with Framework7+Vue.
     </description>
     <author email="support@phonegap.com" href="http://devgirl.org">
         Holly Schinsky
