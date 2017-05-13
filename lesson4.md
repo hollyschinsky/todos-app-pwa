@@ -108,10 +108,17 @@ Open your **index.html** file and add the following into the `<head></head>` of 
 > This is considered a _progressive enhancement_, where it will only enhance the app with the service worker features where supported but run just fine elsewhere.        
 
 
->**TIP:** Check out the [sw-precache](https://github.com/GoogleChrome/sw-precache) project to help generate your service worker.
+### Caching of Service Workers 
+
+You may find your service worker code is not updating. You can force the update with the Chrome dev tools by going to the **Application** tab, selecting service workers on the left and checking the **Update on Reload** box:
+
+[]!
+
+>If you're hosting your app on a server like Firebase, there's typically a setting you can modify to fix this.
 
 ## Resources
 - [Service Workers Explained](https://github.com/w3c/ServiceWorker/blob/master/explainer.md)
+- [sw-precache](https://github.com/GoogleChrome/sw-precache) - popular project to help generate your service worker based on certain settings. Integrates with your build process.
 
 <!--## Demo - Data Passing
 TODO: are we showing this plugin - https://github.com/purplecabbage/phonegap-plugin-sidebar -->

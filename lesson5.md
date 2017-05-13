@@ -33,7 +33,7 @@ It's a well-known fact that Apple currently does not support service workers on 
         <preference name="ServiceWorker" value="service-worker.js" />
         <preference name="CacheCordovaAssets" value="false" />
 
-> The value of the ServiceWorker preference should match the service worker file you created previously in the `www` folder. DO NOT include the `www` in the file path as it is assumed by the plugin
+> The value of the ServiceWorker preference should match the service worker file you created previously in the `www` folder. DO NOT include the `www` in the file path as it is assumed to be located there by the plugin.
 
 <div class="row" style="margin-top:40px;">
 <div class="col-sm-12">
