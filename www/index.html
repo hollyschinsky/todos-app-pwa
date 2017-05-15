@@ -3,18 +3,39 @@
 <head>
   <meta http-equiv="Content-Security-Policy" content="default-src 'self' data: gap: https://ssl.gstatic.com 'unsafe-eval' 'unsafe-inline' ws://*; style-src 'self' 'unsafe-inline'; media-src *; connect-src *; img-src * data:">
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no, minimal-ui">
-  
+  <link rel="mask-icon" href="icons/safari-pinned-tab.svg" color="gray">
+
   <meta name="theme-color" content="#2196F3"> 
 
   <!-- PWA - Add to home screen settings for Safari on iOS -->    
   <meta name="apple-mobile-web-app-capable" content="yes">
   <meta name="apple-mobile-web-app-status-bar-style" content="black">
   <meta name="apple-mobile-web-app-title" content="Todo List">
-  <link rel="apple-touch-icon" href="img/icons/apple-touch-icon.png">
-  <link rel="apple-touch-startup-image" href="icon.png">
+  <link rel="apple-touch-icon" href="img/icons/apple-touch-icon-precomposed.png">
 
   <meta name="msapplication-tap-highlight" content="no">
+  <!--<link rel="apple-touch-startup-image" href="img/screen-iphone-portrait.png">-->
   
+  <!-- iPhone 6 Plus portrait startup image -->
+  <link href="screen-iphone-portrait-736h.png"
+        media="(device-width: 414px) and (device-height: 736px)
+              and (-webkit-device-pixel-ratio: 3)
+              and (orientation: portrait)"
+        rel="apple-touch-startup-image">
+
+  <!-- iPhone 6 startup image -->
+  <link href="screen-iphone-portrait-667h.png"
+      media="(device-width: 375px) and (device-height: 667px)
+             and (-webkit-device-pixel-ratio: 2)"
+      rel="apple-touch-startup-image">
+  
+  <link href="creen-iphone-portrait.png" media="(device-width: 320px)" rel="apple-touch-startup-image">
+  <!-- iPhone (Retina) SPLASHSCREEN-->
+  <link href="screen-iphone-portrait-2x.png" media="(device-width: 320px) and (device-height: 460px) and (-webkit-device-pixel-ratio: 2)" 
+  rel="apple-touch-startup-image">
+
+  <meta name="msapplication-tap-highlight" content="no">  
+
   <!-- PWA - Pinned Tile for Windows -->
   <meta name="msapplication-TileImage" content="img/icons/mstile-150x150.png">
   <meta name="msapplication-TileColor" content="#2F3BA2">
@@ -133,7 +154,7 @@
   <template id="page-pending">
     <f7-page>
         <f7-block-title>{{ title }}</f7-block-title> 
-        <img src="img/logo.png" width="320" height="240">
+        <!--<img src="img/logo.png" width="320" height="240">-->
         <f7-list v-if="todos.length > 0">      
           <f7-list-item v-for="(todo, key) in todos" :key="key" v-if="displayItem(todo)"
             :checked="(todo.completed ? true : false)" :data-index="key"
@@ -193,7 +214,7 @@
   <script src="cordova.js"></script> 
   <script src="lib/framework7/js/framework7.min.js"></script>
   <script src="lib/vue/vue.min.js"></script> 
-  <!-- Use below version for debugging with chrom vue tool --> 
+  <!-- Use the non-minified version for debugging with chrome vue tool --> 
   <!--<script src="lib/vue/vue.js"></script>-->
   <script src="lib/framework7-vue/framework7-vue.min.js"></script>
   <script src="js/init-styles.js"></script>  
@@ -202,7 +223,7 @@
 
   <noscript>
     <p>Uh oh, JavaScript must be disabled and your content didn't load.</p>
-</noscript>
+  </noscript>
   
 </body>
 </html>

@@ -1,5 +1,5 @@
 // use a cacheName for cache versioning
-var cacheName = 'v1:todos-pwa-app';
+var cacheName = 'v2:todos-pwa-app';
 
 // during the install phase you usually want to cache static assets
 self.addEventListener('install', function(e) {
@@ -42,8 +42,12 @@ self.addEventListener('install', function(e) {
                 'lib/framework7-icons/fonts/Framework7Icons-Regular.woff',
                 'lib/framework7-icons/fonts/Framework7Icons-Regular.woff2',
                 'lib/framework7-vue/framework7-vue.min.js',
-                'lib/vue/vue.min.js',    
-                'img/icons/apple-touch-icon.png',
+                'lib/vue/vue.min.js',  
+                'img/screen-iphone-portrait-2x.png',
+                'img/screen-iphone-portrait-568h-2x.png',
+                'img/screen-iphone-portrait-667h.png',
+                'img/screen-iphone-portrait-736h.png',
+                'img/icons/apple-touch-icon-precomposed.png',
                 'img/icons/mstile-150x150.png',
                 'img/icons/safari-pinned-tab.svg',
                 'img/icons/favicon-16x16.png',
@@ -93,24 +97,5 @@ self.addEventListener('fetch', function(event) {
         })       
         
         );
-    //}
-    // function test() {
-    //     if (/\.png$/.test(event.request.url)) {
-    //         console.log("Is png")
-    //         return fetch('http://addolo.com/wp-content/uploads/2017/01/90-stunning-silly-cat-pictures-image-inspirations-1280x960-wallpapersother-wallpapers-with-captions.jpg', {
-    //         mode: 'no-cors'}               
-    //     )}
-    //     else {
-    //         caches.match(event.request).then(function(response) {            
-    //             if (response) {
-    //                 // retrieved from cache
-    //                 console.log("[Service Worker] Retrieved object FROM CACHE for request URL -> " + event.request.url);
-    //                 return response;
-    //             }
-    //             // fetch as normal
-    //             console.log("[Service Worker] Request URL NOT found in cache, fetching... -> " + event.request.url);
-    //             return fetch(event.request);
-    //         })
-    //     }
-    // }
+    //}    
 });
