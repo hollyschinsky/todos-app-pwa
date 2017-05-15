@@ -51,6 +51,9 @@ The manifest file is a JSON formatted file used to describe your app and how it 
 
     <link rel="manifest" href="manifest.json">
 
+4. If you're still serving the app from the previous lesson, refresh your browser and click on the dev tools **Application** tab in the top and manifest tab on the left as shown below to ensure it's been applied:
+
+![](images/starter-app-run.png)
 
 
 <div class="row" style="margin-top:40px;">

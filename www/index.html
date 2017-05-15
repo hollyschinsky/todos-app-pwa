@@ -3,15 +3,24 @@
 <head>
   <meta http-equiv="Content-Security-Policy" content="default-src 'self' data: gap: https://ssl.gstatic.com 'unsafe-eval' 'unsafe-inline' ws://*; style-src 'self' 'unsafe-inline'; media-src *; connect-src *; img-src * data:">
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no, minimal-ui">
+  
+  <meta name="theme-color" content="#2196F3"> 
+
   <!-- PWA - Add to home screen settings for Safari on iOS -->    
   <meta name="apple-mobile-web-app-capable" content="yes">
   <meta name="apple-mobile-web-app-status-bar-style" content="black">
   <meta name="apple-mobile-web-app-title" content="Todo List">
   <link rel="apple-touch-icon" href="img/icons/apple-touch-icon.png">
+  <!--<link href="apple-touch-startup-image-320x460.png" media="(device-width: 320px)" rel="apple-touch-startup-image">-->
+  <!--<link rel="apple-touch-startup-image" href="img/screen.png">`-->
   
-  <meta name="format-detection" content="telephone=no">
-  <meta name="msapplication-tap-highlight" content="no">
+  
+  <!-- iPhone (Retina) SPLASHSCREEN-->
+  <!--<link href="apple-touch-startup-image-640x920.png" media="(device-width: 320px) and (device-height: 460px) and (-webkit-device-pixel-ratio: 2)" 
+  rel="apple-touch-startup-image">-->
 
+  <meta name="msapplication-tap-highlight" content="no">
+  
   <!-- PWA - Pinned Tile for Windows -->
   <meta name="msapplication-TileImage" content="img/icons/mstile-150x150.png">
   <meta name="msapplication-TileColor" content="#2F3BA2">
@@ -43,8 +52,7 @@
 
 <body>
   
-  <div id="app" v-show="isMounted"> 
-
+  <div id="app" v-show="isMounted">     
     <!-- Statusbar -->
     <f7-statusbar></f7-statusbar>    
 
@@ -131,6 +139,8 @@
   <template id="page-pending">
     <f7-page>
         <f7-block-title>{{ title }}</f7-block-title> 
+        <!-- Network interception example - uncomment in service-worker.js too -->
+        <!--<img src="img/logo.png" width="320" height="240">-->
         <f7-list v-if="todos.length > 0">      
           <f7-list-item v-for="(todo, key) in todos" :key="key" v-if="displayItem(todo)"
             :checked="(todo.completed ? true : false)" :data-index="key"
@@ -196,6 +206,10 @@
   <script src="js/init-styles.js"></script>  
   <script src="js/todos.js"></script>
   <script src="js/app.js"></script>
+
+  <noscript>
+    <p>Uh oh, JavaScript must be disabled and your content didn't load.</p>
+</noscript>
   
 </body>
 </html>
