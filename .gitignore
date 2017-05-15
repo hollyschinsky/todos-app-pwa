@@ -9,6 +9,8 @@ plugins/
 _site/
 Thumbs.db
 *.DS_Store
+firebase.json
+.firebaserc
 
 *.bak
 *.cache

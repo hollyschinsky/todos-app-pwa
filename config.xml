@@ -13,4 +13,5 @@
     <plugin name="phonegap-plugin-service-worker" spec="https://github.com/phonegap/phonegap-plugin-service-worker" />
     <preference name="ServiceWorker" value="service-worker.js" />
     <preference name="CacheCordovaAssets" value="false" />
+    <engine name="ios" spec="~4.3.1" />
 </widget>
