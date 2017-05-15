@@ -1,8 +1,8 @@
 {
   "manifest_version": 2,  
-  "name": "Todo List",
+  "name": "Todo List", 
   "version": "1.0.0",
-  "short_name": "TODO's",
+  "short_name": "TODO's", 
   "icons": [{
     "src": "img/icons/icon-128x128.png",
       "sizes": "128x128",
