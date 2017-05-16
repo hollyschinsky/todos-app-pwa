@@ -4,19 +4,19 @@ title: Lesson 2&#58; PWA Manifest
 ---
 
 ## Overview
-The manifest file is a JSON formatted file used to describe your app and how it should appear when it's installed to the home screen. This includes properties like the name, icons etc. It also controls how it should be launched when that icon is clicked (start URL, display and orientation).
+The manifest file is a JSON formatted file used to describe your app and how it should appear when it's installed to the home screen. This includes properties like the app name, icons and how it should be launched when the icon is clicked.
 
 ## Exercise 
 
-1. `cd` into the `www` folder of the **todos-app-starter** project create a new file and name it **manifest.json**.
+1. `cd` into the `www` folder of the **todos-app-starter** project and create a new file with the name **manifest.json**.
 
 2. Paste in the the following definition:
 
             {
-            "manifest_version": 2,
-            "name": "Todo List",
+            "manifest_version": 2,  
+            "name": "Todo List", 
             "version": "1.0.0",
-            "short_name": "TODO's",
+            "short_name": "TODO's", 
             "icons": [{
                 "src": "img/icons/icon-128x128.png",
                 "sizes": "128x128",
@@ -40,20 +40,31 @@ The manifest file is a JSON formatted file used to describe your app and how it 
                 }],
             "start_url": "/index.html",
             "display": "standalone",
-            "background_color": "#3E4EB8",
-            "theme_color": "#2F3BA2"
+            "background_color": "#2196F3",
+            "theme_color": "#2196F3"
             }
 
 
-  > You can also set an `orientation` property if desired, try it out by adding `"orientation": "landscape"` after the `theme_color`.
+   >You can also set an `orientation` property if desired. Try it out by adding `"orientation": "landscape"` after the `theme_color`.
 
-3. The app needs to be aware of this new manifest file to apply it. Open your **index.html** file and add a link to it anywhere before the closing HTML `</head>` tag.
+3. Next you need to tell the app to use this new manifest file. Open the **www/index.html** file and add a link to it anywhere before the closing HTML `</head>` tag.
 
-    <link rel="manifest" href="manifest.json">
+        <link rel="manifest" href="manifest.json">
 
-4. If you're still serving the app from the previous lesson, refresh your browser and click on the dev tools **Application** tab in the top and manifest tab on the left as shown below to ensure it's been applied:
+4. If you're still serving the app from the previous lesson, simply refresh your browser otherwise run `phonegap serve` again and open the URL again. Next click on the dev tools **Application** tab in the top and the **manifest** tab on the left as shown below to ensure your manifest file was found:
+ 
+ ![](images/manifest.png)
 
-![](images/starter-app-run.png)
+ >You can test out the **Add to homescreen** feature from here to ensure your app start URL is invoked properly but otherwise will need to try out the app using your Android device and a hosted app URL to see how the changes apply. 
+
+## Device Testing
+I've created a hosted version of this app located at [https://todos-app-pwa.firebaseapp.com](https://todos-app-pwa.firebaseapp.com) where you could navigate to from an Android device browser to see how the manifest settings affect the app. The screenshots below show this app running on an Android Pixel:
+
+![](images/hs1.png)
+
+  
+## Resources
+- Check out the [AndroidAssetStudio](https://romannurik.github.io/AndroidAssetStudio/) to help you create your icons for different resolutions for Android.
 
 
 <div class="row" style="margin-top:40px;">

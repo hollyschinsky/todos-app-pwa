@@ -4,7 +4,7 @@ title: Lesson 6&#58; Lighthouse Debugging
 ---
 
 ## Overview
-Lighthouse is an open-source, automated tool for improving the performance, quality, and correctness of your web apps. 
+Lighthouse is an open-source, automated tool for helping you to imrpove the performance, quality, and correctness of your web apps. 
 
 When auditing a page, Lighthouse runs a barrage of tests against the page, and then generates a report on how well the page did. From here you can use the failing tests as indicators on what you can do to improve your app.
 

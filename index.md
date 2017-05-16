@@ -13,11 +13,8 @@ The app was built using [Framework7](http://framework7.io) and [Vue.js](http://v
 
 
 ### Project Repo 
-- [Starter Project](https://github.com/hollyschinsky/pwa-workshop-starter)
-- [Final Project](https://github.com/hollyschinsky/pwa-workshop)
-
-<!--- The slides used in the lab can be found [here](https://github.com/hollyschinsky/pwa-workshop/blob/master/1189-PhoneGapPlugins.pdf)-->
-
+- [Starter Project](https://github.com/hollyschinsky/todos-app-starter)
+- [Final Project](https://github.com/hollyschinsky/todos-app-pwa)
 
 ### Requirements & Dependencies
 - A code editor, Chrome browser, and connection to the Internet
@@ -33,7 +30,7 @@ The app was built using [Framework7](http://framework7.io) and [Vue.js](http://v
 
 ## Issues/Feedback
 
-- Please file an issue [here](https://github.com/hollyschinsky/pwa-workshop/issues) if you run into any problems or if you have feedback.
+- Please file an issue [here](https://github.com/hollyschinsky/todos-app-pwa/issues) if you run into any problems or if you have feedback.
 
 - You can also use the _Comments_ section at the bottom of each module to ask a question or report a problem.
 
