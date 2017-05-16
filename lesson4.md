@@ -5,6 +5,13 @@ title: Lesson 4&#58; Service Workers
 ## Overview
 Features provided via service workers should be considered a progressive enhancement, and added only if supported by the browser. For example, with service workers you can cache the app shell and data for your app, so that it's available even when the network isn't. When service workers aren't supported, the offline code isn't called, and the user gets a basic experience. Using feature detection to provide progressive enhancement has little overhead and it won't break in older browsers that don't support that feature.
 
+## Use Cases
+- One use case is to check your caches for any fetch request, only attempting to retrieve it from the network if it's not there.
+
+- Another option is to go to the network first, only checking the cache if that fails (e.g. if the device is offline).
+
+
+
 ## Exercise 
 
 1. From the `www` folder of your project, create a new file and name it **service-worker.js**.

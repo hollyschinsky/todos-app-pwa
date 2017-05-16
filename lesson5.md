@@ -4,9 +4,10 @@ title: Lesson 5&#58; PhoneGap iOS Service Worker Polyfill
 ---
 
 ## Overview
-It's a well-known fact that Apple currently does not support service workers on iOS. There's nothing much we can do about this for the browser side of things, however we can do something to add support to our PhoneGap app. There's a plugin available to polyfill the service worker support on iOS called [phonegap-plugin-service-worker](https://github.com/phonegap/phonegap-plugin-service-worker)
+It's a well-known fact that Apple currently does not support service workers on iOS. There's nothing much we can do about that when running our apps in the device browser on iOS, however, with Cordova/PhoneGap we have the ability to access native device features via plugins and essentially polyfill the service worker code natively.
 
-> This plugin was originally built by the [Mobile Chrome Apps team](https://github.com/MobileChromeApps) and subsequently forked by the PhoneGap team to help developers have more options when building with PhoneGap.
+There's actually a plugin available now that adds service worker support to your Cordova iOS apps, called [phonegap-plugin-service-worker](https://github.com/phonegap/phonegap-plugin-service-worker)
+This plugin was originally built by the [Mobile Chrome Apps team](https://github.com/MobileChromeApps) and subsequently forked by the PhoneGap team with some minor updates. It's undergoing further change but there are some basic features available now, specifically the caching/fetching APIs. 
 
 ## Exercise
 
