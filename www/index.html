@@ -5,44 +5,20 @@
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no, minimal-ui">
   <link rel="mask-icon" href="icons/safari-pinned-tab.svg" color="gray">
 
-  <!-- status bar, address bar, header bar color for Android -->
+  <!-- Color of status bar, address bar, header bar color for Android -->
   <meta name="theme-color" content="#2196F3"> 
 
   <!-- PWA - Add to home screen settings for Safari on iOS -->    
   <meta name="apple-mobile-web-app-capable" content="yes">
   <meta name="apple-mobile-web-app-status-bar-style" content="black">
   <meta name="apple-mobile-web-app-title" content="Todo List">
-  <link rel="apple-touch-icon" href="img/icons/apple-touch-icon-precomposed.png">
 
-  <meta name="msapplication-tap-highlight" content="no">
+  <!-- Need to handle all desired sizes for the following two (see Apple Docs for dimensions) -->  
+  <link rel="apple-touch-icon" href="img/icons/apple-touch-icon.png">
   
-  <!-- iPhone 6 Plus portrait startup image -->
-  <!--<link href="img/screen-iphone-portrait-736h.png"
-        media="(device-width: 414px) and (device-height: 736px)
-        and (-webkit-device-pixel-ratio: 3) and (orientation: portrait)" rel="apple-touch-startup-image">-->
-
-    <!-- iPhone 6 Plus portrait startup image -->
-    <link href="img/Default-Portrait-736h@3x_a.png" rel="apple-touch-startup-image">
-
-    <!-- iPhone 6 Plus landscape startup image -->
-    <link href="https://placehold.it/1182x2208"
-          media="(device-width: 414px) and (device-height: 736px)
-                 and (-webkit-device-pixel-ratio: 3)
-                 and (orientation: landscape)"
-          rel="apple-touch-startup-image">
-
-    <!-- iPhone 6 startup image -->
-    <link href="https://placehold.it/750x1294"
-          media="(device-width: 375px) and (device-height: 667px)
-                 and (-webkit-device-pixel-ratio: 2)"
-          rel="apple-touch-startup-image">
-
-    <!-- iPhone 5 startup image -->
-    <link href="https://placehold.it/640x1096"
-          media="(device-width: 320px) and (device-height: 568px)
-                 and (-webkit-device-pixel-ratio: 2)"
-          rel="apple-touch-startup-image">
-
+  <link rel="apple-touch-startup-image" href="img/Default-Portrait.png"> 
+  <link rel="apple-touch-startup-image" href="img/Default-Portrait-736@3x.png" sizes="1242x2148">
+  
   <meta name="msapplication-tap-highlight" content="no">  
 
   <!-- PWA - Pinned Tile for Windows -->
@@ -68,10 +44,11 @@
   <link rel="manifest" href="manifest.json">
     
   <title>My Todo App</title>
-  <link rel="stylesheet" href="lib/framework7-icons/css/framework7-icons.css">
-
+  
   <!-- See js/init-styles.jswhere we load F7 style sheets based on platform -->
   <link rel="stylesheet" href="css/app.css">  
+  <link rel="stylesheet" href="lib/framework7-icons/framework7-icons.css">
+
 </head>
 
 <body>
@@ -223,7 +200,7 @@
   <!--<script src="cordova.js"></script> -->
   <script src="lib/framework7/js/framework7.min.js"></script>
   <script src="lib/vue/vue.min.js"></script> 
-  <!-- Use the non-minified version for debugging with chrome vue tool --> 
+  <!-- Use this non-minified version for debugging with chrome vue tool --> 
   <!--<script src="lib/vue/vue.js"></script>-->
   <script src="lib/framework7-vue/framework7-vue.min.js"></script>
   <script src="js/init-styles.js"></script>  

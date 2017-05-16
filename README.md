@@ -1,6 +1,6 @@
 ## Sample Todo's PhoneGap + Progressive Web App (with Offline Support)
 
-This repo contains a sample todo app that has been built as both a PhoneGap hybrid app and a Progressive Web App with Offline Support. Try out the hosted demo here and be sure to check out the [online workshop](http://hollyschinsky.github.io/pwa-workshop) to help you learn more. 
+This repo contains a sample todo app that has been built as both a PhoneGap hybrid app and a Progressive Web App with Offline Support. Try out the hosted demo here and be sure to check out the [online workshop](http://hollyschinsky.github.io/todos-app-pwa) to help you learn more. 
 
 
 ### App Stack
@@ -15,9 +15,9 @@ The app was built with [Framework7](http://framework7.io) and [Vue.js](http://vu
 
 ## Usage
 
-    phonegap create todos-app --template https://github.com/hollyschinsky/pwa-workshop
+    phonegap create todos-app --template https://github.com/hollyschinsky/todos-app-pwa
 
-    cordova create todos-app --template=https://github.com/hollyschinsky/pwa-workshop
+    cordova create todos-app --template=https://github.com/hollyschinsky/todos-app-pwa
 
 ## Advanced Version of the Todo App 
 Built with Framework7, Vue.js and Cordova/PhoneGap along with Babel, Webpack and Hot Reloading
