@@ -4,11 +4,10 @@ title: Lesson 3&#58; Cross Browser Support via Meta Tags
 ---
 
 ## Overview
-It's a pretty well known fact that service workers are not supported on Apple, however, there are still things you can do to make your apps more "Progressive Web App" like across platforms. There are various meta tags that are supported and in this exercise you will add them to your app so you can see how they work.
+Many developers assume that Apple doesn't support Progressive Web Apps. This really isn't the case in the full sense of what Progressive Web Apps are. It's true they do not currently support service workers, but PWA's are made up of a collection of features (add to homescreen, securely hosted etc), which are supported on iOS, just in a different way. You should always think about what kind of progressive enhancements you can make to your base apps to support the latest features on different platforms to enhance the user experience. In this lesson we'll learn about some HTML tags we can add to our apps to provide progressive enhancements for iOS and Windows.
 
 ## Exercise 
-In this lesson we'll add `<meta>` and `<link>` tags to define settings for your app when it's used with the iOS or Windows Add to Home Screen support. Open the **index.html** file and go through the following steps.
-
+Open the **index.html** file and go through the following sections:
 
 ### iOS Web App Customizations
 - Add the `apple-mobile-web-app-capable` meta tag to your app to run in **standalone** (fullscreen) mode when launched from the home screen:
