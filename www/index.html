@@ -17,7 +17,7 @@
   <link rel="apple-touch-icon" href="img/icons/apple-touch-icon.png">
   
   <link rel="apple-touch-startup-image" href="img/Default-Portrait.png"> 
-  <link rel="apple-touch-startup-image" href="img/Default-Portrait-736@3x.png" sizes="1242x2148">
+  <!--<link rel="apple-touch-startup-image" href="img/Default-Portrait-736@3x.png" sizes="1242x2148">-->
   
   <meta name="msapplication-tap-highlight" content="no">  
 
@@ -47,7 +47,7 @@
   
   <!-- See js/init-styles.jswhere we load F7 style sheets based on platform -->
   <link rel="stylesheet" href="css/app.css">  
-  <link rel="stylesheet" href="lib/framework7-icons/framework7-icons.css">
+  <link rel="stylesheet" href="css/framework7-icons.css">
 
 </head>
 
@@ -88,7 +88,8 @@
 
         <f7-navbar sliding v-if="$theme.ios">
           <f7-nav-left>
-            <f7-link icon-f7="bars" open-panel="side-panel"></f7-link>
+            <!--<f7-link icon-f7="bars" open-panel="side-panel"></f7-link>-->
+            <f7-link icon="icon-bars" open-panel="side-panel"></f7-link>
           </f7-nav-left>
           <f7-nav-center>Todo List</f7-nav-center>
           <f7-nav-right>
