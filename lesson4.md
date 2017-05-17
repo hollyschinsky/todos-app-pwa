@@ -10,15 +10,13 @@ Features provided via service workers are considered a progressive enhancement a
 
 - Another option is to go to the network first, only checking the cache if that fails (e.g. if the device is offline).
 
-
-
 ## Exercise 
 
 1. From the `www` folder of your project, create a new file and name it **service-worker.js**.
 
 2. In that new file, enter the following code snippet:
 
-        // use a cacheName for cache versioning
+    // use a cacheName for cache versioning
     var cacheName = 'v1:todos-pwa-app';
 
     // during the install phase you usually want to cache static assets
@@ -37,7 +35,7 @@ Features provided via service workers are considered a progressive enhancement a
                     'js/app.js',
                     'js/todos.js',
                     'js/init-styles.js',
-                    /*'cordova.js',
+                    'cordova.js',
                     'cordova_plugins.js',
                     'plugins/cordova-plugin-statusbar/www/statusbar.js',
                     'plugins/cordova-plugin-statusbar/src/browser/StatusBarProxy.js',
