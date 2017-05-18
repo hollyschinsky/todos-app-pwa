@@ -21,6 +21,7 @@ self.addEventListener('install', function(e) {
                 'cordova.js',
                 'cordova_plugins.js',
                 'plugins/cordova-plugin-statusbar/www/statusbar.js',
+                'plugins/cordova-plugin-statusbar/src/browser/StatusBarProxy.js',
                 'cordova.js',
                 'lib/framework7/css/framework7.ios.colors.min.css',
                 'lib/framework7/css/framework7.ios.min.css',

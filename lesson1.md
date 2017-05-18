@@ -4,7 +4,7 @@ title: Lesson 1&#58; Project Setup
 ---
 
 ## Overview
-This lesson assumes you have the PhoneGap CLI installed. If you have not installed it yet, you can do so now with the following command (requires node):
+This lesson assumes you have the PhoneGap CLI installed. If you have not installed it yet, you can do so now with the following command:
 
     npm install -g phonegap
 
@@ -45,7 +45,7 @@ In this lesson we will create a starter project and get a copy of the final proj
          ../pgday/todos-app-pwa
 
 
-### Try it out!
+### Test it out!
 
 Before moving to lesson 2, test out the app. `cd` into the **todos-app-starter** and type `phonegap serve`, then use your Chrome browser to navigate to the URL returned.
 

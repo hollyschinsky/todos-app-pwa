@@ -1,59 +1,35 @@
 ---
 layout: module
-title: Lesson 7&#58; Deploying your App!
+title: Lesson 7&#58; Lighthouse & Debugging
 ---
 
 ## Overview
+Lighthouse is an open-source, automated tool for helping you to imrpove the performance, quality, and correctness of your web apps.
 
-### Exercise 
+When auditing a page, Lighthouse runs a barrage of tests against the page, and then generates a report on how well the page did. From here you can use the failing tests as indicators on what you can do to improve your app.
 
-1. Create a firebase account if you don't have one already. 
+## Exercise
+1. Install the [Lighthouse Chrome Extension]((https://chrome.google.com/webstore/detail/lighthouse/blipmdconlkpinefehnmjammfjpmpbjk?hl=en))
 
-2. Create a new project in Firebase
+2. Run the report on your site
 
-3. Install `firebase-tools` 
+3. Increase your score by adding the following snippet before the closing `<\body>` tag to provide a more useful message indicating the situation when your pages can't load.
 
-    npm install -g firebase-tools
+        <noscript>
+            <p>Uh oh, JavaScript must be disabled and your content didn't load.</p>
+        </noscript>
 
-4. Login to Firebase from the command line
-    
-    firebase login
-
-5. Run the `init` command from the root of the project you want to host (ie: **~/pgday/todos-app-starter/**).   
-    
-    firebase init
-
-6. Next the Firebase tools will prompt you will the following questions: 
-
- - What Firebase CLI features do you want to setup for this folder? [select **hosting**] - **NOTE** u will probably want to deselect the other options as they're all selected initially. Hit the space bar to unselect. 
-
-  - What Firebase project do you want to associate as default?[select project name you just created]
-
-  - What do you want to use as your public directory?[www]
-
-Configure as a single-page app (rewrite all urls to /index.html)? [y]
-File www/index.html already exists. Overwrite? (y/N) [N]
-You have just configured your firebase hosting project. In the process you will see that there are few files being added firebase.json, .firebaserc and database.rules.json. We will need to customize firebase.json but will do that later. Lets deploy our site.
-$firebase deploy
-You will see URL of hosting site in the output, this is where we are going to have our PWA.
-
-6. You can add settings to **firebase.json** to control things like caching. This file was added into your root project 
-
-    "headers": [
-      {
-        "source": "service-worker.js",
-        "headers": [
-          {
-            "key": "Cache-Control",
-            "value": "max-age=0"
-          }
-        ]
-      },
-
->See the [Firebase hosting and deploying documentation](https://firebase.google.com/docs/hosting/deploying) for more details. 
+## Resources
+- [Debugging Progressive Web Apps](https://developers.google.com/web/tools/chrome-devtools/progressive-web-apps)
+- [Debugging Service Workers](https://developers.google.com/web/fundamentals/getting-started/codelabs/debugging-service-workers/)
+- [Progressive Web App Checklist](https://developers.google.com/web/progressive-web-apps/checklist)
+- [Lighthouse Chrome Extension](https://chrome.google.com/webstore/detail/lighthouse/blipmdconlkpinefehnmjammfjpmpbjk?hl=en)
+- [Lighthouse Quickstart Guide](http://bit.ly/lighthouse-quickstart)
 
 <div class="row" style="margin-top:40px;">
 <div class="col-sm-12">
-<a href="lesson6.html" class="btn btn-default"><i class="glyphicon glyphicon-chevron-left"></i> Previous</a>
+<a href="lesson7.html" class="btn btn-default"><i class="glyphicon glyphicon-chevron-left"></i> Previous</a>
+<a href="lesson8.html" class="btn btn-default pull-right">Next <i class="glyphicon
+glyphicon-chevron-right"></i></a>
 </div>
 </div>

@@ -1,74 +1,146 @@
 ---
 layout: module
-title: Lesson 5&#58; PhoneGap iOS Service Worker Polyfill
+title: Lesson 5&#58; Add Offline Support
 ---
-
 ## Overview
-It's a well-known fact that Apple currently does not support service workers on iOS. There's nothing much we can do about that when running our apps in the device browser on iOS, however, with Cordova/PhoneGap we have the ability to access native device features via plugins and essentially polyfill the service worker code natively.
-
-There's actually a plugin available now that adds service worker support to your Cordova iOS apps, called [phonegap-plugin-service-worker](https://github.com/phonegap/phonegap-plugin-service-worker)
-This plugin was originally built by the [Mobile Chrome Apps team](https://github.com/MobileChromeApps) and subsequently forked by the PhoneGap team with some minor updates. It's undergoing further change but there are some basic features available now, specifically the caching/fetching APIs. 
+A popular pattern for service workers is to use them to cache the app shell or dependent assets required to make the app functional so when the app is offline it will still load. This aproach also helps with performance since the app will load more quickly each time it's run. When a resource needs to be fetched, the service worker will try to load it from the cache first, then fall back to the network.
 
 ## Exercise
 
-1. Add the [phonegap service worker plugin](https://github.com/phonegap/phonegap-plugin-service-worker) with the following command:
+1. Remove the code inside the **service-worker.js** that we added in the last exercise, we are going to do a new pattern in this exercise.
 
-    `phonegap plugin add https://github.com/phonegap/phonegap-plugin-service-worker`
-
-   > If you're using a recent version of the PhoneGap CLI, this plugin will automatically be saved to your config.xml. If you are running an older version you can add the `--save` to the command to ensure that it's saved.
-
-2. Open your **config.xml** and look to ensure you see the plugin tag added like below:
-
-      `<plugin name="phonegap-plugin-service-worker" spec="https://github.com/phonegap/phonegap-plugin-service-worker" />`
-
-3. There are a couple of preferences that are used by the plugin and you will also need to add these into your **config.xml** file.
-
-    - the `ServiceWorker` preference - you need to set this to the filename of the Service Worker JS code to be used when the app is run on iOS
-    
-    - the `CacheCordovaAssets` preference - a flag to tell the plugin if you want your Cordova app assets cached when it is first run. The **default is `true`**. Set this to `false` if you do not want your app assets cached.
-
-    Open **config.xml** and add these two preferences with your desired values (or leave off the 2nd if you do want the assets to be cached):
-
-        <preference name="ServiceWorker" value="service-worker.js" />
-        <preference name="CacheCordovaAssets" value="false" />
-
-   > The value of the ServiceWorker preference should match the service worker file you created previously in the `www` folder. DO NOT include the `www` in the file path as it is assumed to be located there by the plugin.
-
-4. Now build the app for iOS with:
-
-    `phonegap build ios`
-
-5. Next open the **my-proj.xcodeproject** file created in the **~/pgday/todos-app-starter/platforms/ios/** folder in Xcode. For instance, if you named your project **todos-app-starter** then it will be named **todos-app-starter.xcodeproject**. 
-
-6. Run the app from Xcode and watch the console for the service worker generated statements which indicate if a file was fetched or retrieved from the cache. 
-
-![](images/ios-log.png)
-
-Subsequent runs should show the files fetched from the cache.
-
-![](images/ios-log-cached.png)
-
->You may need to update a version when switching between service worker updates and cache names. The cache name is `CordovaAssets` when that preference is set to `true`. If you create
-another cache name, this may not work right. 
-
-### iOS Cache Data
-The service-worker writes to a SQLite data store on iOS and the `phonegap-service-worker-plugin` actually logs the location in the Xcode console if you want to take a look at it:
-
-![](images/ios-cache-location.png)
-
-You can download the [DB Browser for SQLite](http://sqlitebrowser.org/) tool to view the data cached by your app. Simply find the location of the cache data in the Xcode console and open the `swcache.db` file:
-
-![](images/ios-open-cache.png)
-
-Then browse the data with the DB Browser:
-
-![](images/db-browser.png)
-
-### Network Intercept Test
-Now let's try out that same service worker code we tested from the PWA version of the app to intercept a network fetch call. Uncomment that piece of code in the **service-worker.js** located in the **Staging** folder under `www` and run the app again. You'll also need to uncomment the `<img>` tag we added into `index.html`. 
+2. Paste in the following code:
 
 
-![](images/ios-network-intercept.png)
+        // use a cacheName for cache versioning
+        var cacheName = 'todos_offline_cache:v1'
+        var goodCaches = [];
+        goodCaches.push(cacheName);
+
+        // during the install phase you usually want to cache static assets
+        self.addEventListener('install', function(e) {
+            console.log('[ServiceWorker] Install!!');
+            e.waitUntil(
+                caches.open(cacheName).then(function(cache) {
+                    return cache.addAll([
+                        // If we don't add the root, we must navigatee to http://localhost:3000/index.html when offline
+                        '/',  
+                        '/index.html',
+                        '/manifest.json',
+                        '/css/app.css',
+                        '/css/app.ios.css',
+                        '/css/app.material.css',
+                        '/js/app.js',
+                        '/js/todos.js',
+                        '/js/init-styles.js',
+                        '/cordova.js',
+                        '/cordova_plugins.js',
+                        '/plugins/cordova-plugin-statusbar/www/statusbar.js',
+                        '/plugins/cordova-plugin-statusbar/src/browser/StatusBarProxy.js',
+                        '/lib/framework7/css/framework7.ios.colors.min.css',
+                        '/lib/framework7/css/framework7.ios.min.css',
+                        '/lib/framework7/css/framework7.ios.rtl.min.css',
+                        '/lib/framework7/css/framework7.material.colors.min.css',
+                        '/lib/framework7/css/framework7.material.min.css',
+                        '/lib/framework7/css/framework7.material.rtl.min.css',
+                        '/lib/framework7/js/framework7.min.js',
+                        '/css/framework7-icons.css',
+                        '/css/Framework7Icons-Regular.eot',
+                        '/css/Framework7Icons-Regular.ttf',
+                        '/css/Framework7Icons-Regular.woff',
+                        '/css/Framework7Icons-Regular.woff2',
+                        '/lib/framework7-vue/framework7-vue.min.js',
+                        '/lib/vue/vue.min.js',
+                        '/img/Default-Portrait.png',
+                        '/img/logo.png',
+                        '/img/icons/apple-touch-icon.png',
+                        '/img/icons/mstile-150x150.png',
+                        '/img/icons/safari-pinned-tab.svg',
+                        '/img/icons/favicon-16x16.png',
+                        '/img/icons/favicon-32x32.png',
+                        '/img/icons/favicon.ico',
+                        '/img/icons/icon-128x128.png',
+                        '/img/icons/icon-144x144.png',
+                        '/img/icons/icon-152x152.png',
+                        '/img/icons/icon-192x192.png',
+                        '/img/icons/icon-256x256.png',
+                    ]).then(function() {
+                        self.skipWaiting();
+                    });
+                })
+            );
+        });
+
+        self.addEventListener('activate', function(event) {
+        console.log('[ServiceWorker] Activate');
+        event.waitUntil(
+                caches.keys().then(function(cacheNames) {
+                    return Promise.all(
+                        cacheNames.map(function(cacheKey) {
+                            console.log("Cache key " + cacheKey);
+                            if (goodCaches.indexOf(cacheKey) === -1) {
+                                console.log("Deleting cache " + cacheKey);
+                                return caches.delete(cacheKey);
+                            }
+                        })
+                    );
+                })
+            );
+        });
+
+        self.addEventListener('fetch', function(event) {
+        console.log('Handling fetch event for ' + event.request.url);
+            event.respondWith(
+                caches.match(event.request).then(function(response) {
+                    if (response) {
+                        console.log('Found response in cache:', response);
+                        return response;
+                    }
+                    console.log('No response found in cache. Fetch from network...');
+                    return fetch(event.request);
+                })
+            );
+        });
+
+3. Comment out the `<img ... logo.png>` tag in **index.html** that we used for testing in the last exercise, you won't need that here.
+
+4. Now run the application again using `phonegap serve`
+
+### Verify New Service Worker
+1. Go to the **Application** tab and click on the `service-worker` to see what code is running, and make sure there are no install errors or `skipWaiting()` events. 
+2. You should see console statements from the code added above.
+3. In the Application tab, you can take a look at the CacheStorage to see if your new cache is available and what's in it.
+4. You should no longer see the image loading if you commented out in this lesson.
+
+  >Your service worker code may fail if you have a typo, or if your resource list in the install step does not resolve to the right path, then the promise will not resolve and install will not complete. To test if that's the problem, comment out that whole block from `caches.open(cacheName).then(function(cache) {return cache.addAll([...` on and run again. 
+
+### Test Offline
+The **Application** tab has an option to simulate an offline event to see how it will still run when you go offline due to the cached resources but if you navigate to another site like CNN, you will get the dreaded dinosaur:
+
+  ![](images/web-running-offline.png)
+  ![](images/cnn-offline.png)
+
+   >You will want to try this hosted somewhere to get the true effect. You can host your site securely using github pages or a solution like Firebase (see lesson 7). Or simply check out the [hosted demo here](https://hollyschinsky.github.io/todos-app-pwa) for how the offline handling works.
+
+You can also view the **Cache Storage** items that the service worker has stored in the **Application** tab as shown in the screenshot below:
+
+  ![](images/sw-cache.png)
+
+  >You will sometimes need to refresh to see the latest cache, right click on **Cache Storage** to do so. 
+
+### Service Worker Reminders
+- Only one service worker will manage your app at any time, even if you have multiple browser tabs open. 
+- You should always check the **Application** tab to see what the state of your `service-worker.js` is. You may be able to click to have it `skipWaiting` or `unregister` if needed. 
+- You may want to keep **Update on reload** checked while in dev't. 
+
+### CacheStorage Note
+- Notice the `activate` event has handling to delete old versions of caches that are left around. There's a quota of storage that needs to be managed so you will want to be sure to clean up old versions when a new service worker no longer needs it. 
+
+## Resources
+- [Service Workers Explained](https://github.com/w3c/ServiceWorker/blob/master/explainer.md)
+- [Service Worker Lifecycle](https://developers.google.com/web/fundamentals/instant-and-offline/service-worker/lifecycle)
+- [Is Service Worker Ready?](https://jakearchibald.github.io/isserviceworkerready/)
+- [sw-precache](https://github.com/GoogleChrome/sw-precache) - popular project to help generate your service worker based on certain settings. Integrates with your build process.
 
 <div class="row" style="margin-top:40px;">
 <div class="col-sm-12">
