@@ -47,8 +47,6 @@ Vue.component('page-pending', {
   },
   methods: {
     onItemDeleted (todo) {
-      console.log("REMOVE!");
-      console.warn("REMOVE!!!!");
       removeTodo(todo);
     },
     // Toggle completed status

@@ -1,0 +1,17 @@
+<?xml version='1.0' encoding='utf-8'?>
+<widget id="org.mytodos.app" version="1.0.0" xmlns="http://www.w3.org/ns/widgets" xmlns:gap="http://phonegap.com/ns/1.0">
+    <name>MyTodos</name>
+    <description>
+       A PhoneGap Todo App / Progressive Web App with Offline Support, built with Framework7+Vue.
+    </description>
+    <author email="support@phonegap.com" href="http://devgirl.org">
+        Holly Schinsky
+    </author>
+    <content src="index.html" />
+    <access origin="*" />
+    <plugin name="cordova-plugin-statusbar" spec="~2.2.3" />
+    <plugin name="phonegap-plugin-service-worker" spec="https://github.com/phonegap/phonegap-plugin-service-worker" />
+    <preference name="ServiceWorker" value="service-worker.js" />
+    <preference name="CacheCordovaAssets" value="true" />
+    <engine name="ios" spec="~4.3.1" />
+</widget>
