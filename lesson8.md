@@ -12,17 +12,17 @@ You will want to find a place to host your apps securely. One easy option for st
 
 2. Create a new project in Firebase
 
-3. Install `firebase-tools` 
+3. Install the `firebase-tools` package. This gives you access to the Firebase CLI to use for easily deploying your apps for hosting. 
 
-    npm install -g firebase-tools
+    `npm install -g firebase-tools`
 
 4. Login to Firebase from the command line
     
-    firebase login
+    `firebase login`
 
-5. Run the `init` command from the root of the project you want to host (ie: **~/pgday/todos-app-starter/**).   
+5. Run the `init` command from the root of the project you want to host (ie: **~/pgday/todos-app-starter/**).  
     
-    firebase init
+      `firebase init`
 
 6. Next the Firebase tools will prompt you will the following questions: 
 

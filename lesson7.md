@@ -11,9 +11,9 @@ When auditing a page, Lighthouse runs a barrage of tests against the page, and t
 ## Exercise
 1. Install the [Lighthouse Chrome Extension]((https://chrome.google.com/webstore/detail/lighthouse/blipmdconlkpinefehnmjammfjpmpbjk?hl=en))
 
->Google announced that the Lighthouse tool will be included in an upcoming version of the browser by default. 
+   >Google announced that the Lighthouse tool will be included in an upcoming version of the browser by default. 
 
-2. Run the report on your site
+2. Run the report on your site, check ou the score and areas where you lost points for tips
 
 3. Increase your score by adding the following snippet before the closing `<\body>` tag to provide a more useful message indicating the situation when your pages can't load.
 

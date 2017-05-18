@@ -62,7 +62,7 @@ I've created a hosted version of this app located at [https://todos-app-pwa.fire
 
 ![](images/hs1.png)
 
-![](images/add-to-screen-android.mp4)
+<!--![](images/add-to-screen-android.mp4)-->
 
 ## Resources
 - [W3C Manifest Spec](https://w3c.github.io/manifest/)
