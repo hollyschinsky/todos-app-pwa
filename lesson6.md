@@ -24,7 +24,7 @@ This plugin was originally built by the [Mobile Chrome Apps team](https://github
 3. There are a couple of preferences that are used by the plugin and you will also need to add these into your **config.xml** file.
 
     - the `ServiceWorker` preference - you need to set this to the filename of the Service Worker JS code to be used when the app is run on iOS
-    
+
     - the `CacheCordovaAssets` preference - a flag to tell the plugin if you want your Cordova app assets cached when it is first run. The **default is `true`**. Set this to `false` if you do not want your app assets cached.
 
     Open **config.xml** and add these two preferences with your desired values (or leave off the 2nd if you do want the assets to be cached):
@@ -73,7 +73,7 @@ You can download the [DB Browser for SQLite](http://sqlitebrowser.org/) tool to 
 
 Then browse the data with the DB Browser:
 
- ![](images/db-browser.png)
+![](images/db-browser.png)
 
 >The cache name created by the **config.xml** preference when `CacheCordovaAssets` is true is called `CordovaAssets`. If you have another cache you're managing you should see both when you open the database file. 
 

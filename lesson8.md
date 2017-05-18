@@ -36,15 +36,15 @@ You will want to find a place to host your apps securely. One easy option for st
     
      - File www/index.html already exists. Overwrite? (y/N) **N**
     
-      _You have just configured your firebase hosting project. In the process you will see that there are few files being added firebase.json, .firebaserc and database.rules.json. We will need to customize firebase.json but will do that later._
+       _You have just configured your firebase hosting project. In the process you will see that there are few files being added firebase.json, .firebaserc and database.rules.json. We will need to customize firebase.json but will do that later._
 
 7. Deploy the site
 
       `firebase deploy`
 
-  >You will see URL of hosting site in the output where the PWA will be hosted.
+   >You will see URL of hosting site in the output where the PWA will be hosted.
 
-6. You can add settings to **firebase.json** to control things like caching. This file was added into your root project:
+6. You can add settings to **firebase.json** to control things like caching. This file was added into your root project and you can add some extra mappings like below to this file to ensure the service-worker.js file itself is not cached by firebase::
 
         "headers": [
           {
@@ -56,7 +56,6 @@ You will want to find a place to host your apps securely. One easy option for st
               }
             ]
           },
-
 
 >See the [Firebase hosting and deploying documentation](https://firebase.google.com/docs/hosting/deploying) for more details. 
 

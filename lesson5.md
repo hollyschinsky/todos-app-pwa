@@ -102,7 +102,7 @@ A popular pattern for service workers is to use them to cache the app shell or d
             );
         });
 
-3. Comment out the `<img ... logo.png>` tag in **index.html** that we used for testing in the last exercise, you won't need that here.
+3. Comment out the `<img logo.png>` tag in **index.html** that we used for testing in the last exercise, you won't need that here.
 
 4. Now run the application again using `phonegap serve`
 
@@ -112,7 +112,7 @@ A popular pattern for service workers is to use them to cache the app shell or d
 3. In the Application tab, you can take a look at the CacheStorage to see if your new cache is available and what's in it.
 4. You should no longer see the image loading if you commented out in this lesson.
 
-  >Your service worker code may fail if you have a typo, or if your resource list in the install step does not resolve to the right path, then the promise will not resolve and install will not complete. To test if that's the problem, comment out that whole block from `caches.open(cacheName).then(function(cache) {return cache.addAll([...` on and run again. 
+  >Your service worker code may fail if you have a typo, or if your resource list in the install step does not resolve to the right path, then the promise will not resolve and install will not complete. To test if that's the problem, comment out that whole block from `caches.open(cacheName).then(function(cache) {return cache.addAll([...])` on and run again. 
 
 ### Test Offline
 The **Application** tab has an option to simulate an offline event to see how it will still run when you go offline due to the cached resources but if you navigate to another site like CNN, you will get the dreaded dinosaur:

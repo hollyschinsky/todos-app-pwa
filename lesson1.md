@@ -30,14 +30,14 @@ In this lesson we will create a starter project and get a copy of the final proj
    cordova create todos-app-starter --id com.phonegap.todos --name TodosApp --template https://github.com/hollyschinsky/todos-app-starter
    ```
 
-   ![](images/project-setup.png)
-
    In this command, _todos-app-starter_ is the **path**, _com.phonegap.todos_ is the **fully qualified package name** and _TodosApp_ is the **app name**. Modify these as you wish.
 
    >If you only have the Desktop app you can still use it to create a new project and just select the blank template. You will need to download or clone the [todos-app-starter](https://github.com/hollyschinsky/pwa-workshop-starter) app first and then replace the `www` folder and `config.xml` in your newly project with those from the **todos-app-starter** repo.
 
 
 2. Next get a copy of [the final app project](https://github.com/hollyschinsky/todos-app-pwa) by either cloning it into to your root **pgday** folder with `git` or downloading the zip. You can use this project for reference throughout the workshop.
+
+ ![](images/project-setup.png)
 
 3. You should now have a **pgday** folder with the two projects below:
 
@@ -53,9 +53,9 @@ Before moving to lesson 2, test out the app. `cd` into the **todos-app-starter**
  
 Open the Chrome dev tools tools with the `Option+Command+I` combination or via the **View -> Developer** option from the menu and use the mobile emulator tools to see how the app looks on different devices. You will need to reload the page if switching between an android or ios device to pick up the other style sheet.
 
-![](images/starter-app-run.png)
+![](images/starter-app-served.png)
 
- >**Tip:** The Vue developer tools Chrome extension is useful for debugging your apps built with this app stack in the future, and require the non-minified version of vue. This is not required for this workshop. 
+ >*The Vue developer tools Chrome extension shown in the above is useful for debugging your apps built with this app stack in the future, and require the non-minified version of vue. This is not required for this workshop. 
 
 
 ### PhoneGap CLI Alternatives
