@@ -141,7 +141,7 @@
   <template id="page-pending">
     <f7-page>
         <f7-block-title>{{ title }}</f7-block-title> 
-        <!--<img src="img/logo.png" width="320" height="240">-->
+       <!-- <img src="img/logo.png" width="320" height="240">-->
         <f7-list v-if="todos.length > 0">      
           <f7-list-item v-for="(todo, key) in todos" :key="key" v-if="displayItem(todo)"
             :checked="(todo.completed ? true : false)" :data-index="key"

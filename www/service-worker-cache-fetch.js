@@ -22,7 +22,7 @@ self.addEventListener('install', function(e) {
                 '/js/init-styles.js',
                 '/cordova.js',
                 '/cordova_plugins.js',
-                // '/socket.io/socket.io.js',
+                '/socket.io/socket.io.js',
                 '/plugins/cordova-plugin-statusbar/www/statusbar.js',
                 '/plugins/cordova-plugin-statusbar/src/browser/StatusBarProxy.js',
                 '/lib/framework7/css/framework7.ios.colors.min.css',
