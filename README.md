@@ -2,6 +2,7 @@
 
 This repo contains a sample todo app that has been built as both a PhoneGap hybrid app and a Progressive Web App with Offline Support. Try out the hosted demo [here](https://todos-app-pwa.firebaseapp.com) and be sure to check out the [online workshop](http://hollyschinsky.github.io/todos-app-pwa) to help you learn more.
 
+![](app-screenshots.png)
 
 ### App Stack
 The app was built with [Framework7](http://framework7.io) and [Vue.js](http://vuejs.org).
