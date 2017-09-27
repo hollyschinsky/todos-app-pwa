@@ -50,22 +50,22 @@ A useful feature of service workers is the concept of _Network Interception_. It
 
       `<img src="img/logo.png" width="320" height="240">`      
 
-4. Now run the application again using `phonegap serve` but read the following before navigating to it:
+4. Now run the application again using `phonegap serve` but be sure to first read the following before navigating to it:
 
    >Since service workers are required to be run on a secure site (`https://`), OR during dev't with `localhost`, we need to open the browser and specify `localhost` instead of the IP Address returned from the `serve`. Note that you still need to include the port in the URL. The default is 3000 unless you've specified otherwise, so you would navigate to `localhost:3000` as shown below. 
 
-5. You should see the app run with a silly cat picture as shown below. (Note: you may have to reload the page to see it depending on when the service worker took control).
+5. You should see the app run with a silly cat picture as shown below. (**Note:** you may have to reload the page to see it depending on when the service worker took control).
 
 ![](images/network-intercept1.png)
 
-### Resources
+#### Recommended Reading
 - [Service Workers Explained](https://github.com/w3c/ServiceWorker/blob/master/explainer.md)
 - [Debugging Progressive Web Apps](https://developers.google.com/web/tools/chrome-devtools/progressive-web-apps)
 - [The Service Worker Lifecycle](https://developers.google.com/web/fundamentals/instant-and-offline/service-worker/lifecycle)
 
 <div class="row" style="margin-top:40px;">
 <div class="col-sm-12">
-<a href="lesson4.html" class="btn btn-default"><i class="glyphicon glyphicon-chevron-left"></i> Previous</a>
+<a href="lesson3.html" class="btn btn-default"><i class="glyphicon glyphicon-chevron-left"></i> Previous</a>
 <a href="lesson5.html" class="btn btn-default pull-right">Next <i class="glyphicon
 glyphicon-chevron-right"></i></a>
 </div>

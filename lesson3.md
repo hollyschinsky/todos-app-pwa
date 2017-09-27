@@ -8,10 +8,10 @@ Developers should always consider any progressive enhancements that can be added
 
 In this lesson we'll learn about some HTML tags we can add to our apps to provide progressive enhancements for iOS and Windows.
 
-Open your **www/index.html** file in the **todos-app-starter** and go through the following sections.
+Open the **www/index.html** file in your **todos-app-starter** app and go through the following sections.
 
 ### iOS Web App Customizations
-- Add the `apple-mobile-web-app-capable` meta tag to your app to run in **standalone** (fullscreen) mode when launched from the home screen:
+- Add the `apple-mobile-web-app-capable` meta tag to your app to run in **standalone** (aka fullscreen) mode when launched from the home screen:
 
     `<meta name="apple-mobile-web-app-capable" content="yes">`
 

@@ -22,7 +22,7 @@ When auditing a page, Lighthouse runs a barrage of tests against the page, and t
         </noscript>
 
 ## Resources
-- Lighthouse Website](https://developers.google.com/web/tools/lighthouse/)
+- [Lighthouse Website](https://developers.google.com/web/tools/lighthouse/)
 - [Debugging Progressive Web Apps](https://developers.google.com/web/tools/chrome-devtools/progressive-web-apps)
 - [Debugging Service Workers](https://developers.google.com/web/fundamentals/getting-started/codelabs/debugging-service-workers/)
 - [Progressive Web App Checklist](https://developers.google.com/web/progressive-web-apps/checklist)
@@ -31,7 +31,7 @@ When auditing a page, Lighthouse runs a barrage of tests against the page, and t
 
 <div class="row" style="margin-top:40px;">
 <div class="col-sm-12">
-<a href="lesson7.html" class="btn btn-default"><i class="glyphicon glyphicon-chevron-left"></i> Previous</a>
+<a href="lesson6.html" class="btn btn-default"><i class="glyphicon glyphicon-chevron-left"></i> Previous</a>
 <a href="lesson8.html" class="btn btn-default pull-right">Next <i class="glyphicon
 glyphicon-chevron-right"></i></a>
 </div>

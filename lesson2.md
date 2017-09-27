@@ -4,7 +4,7 @@ title: Lesson 2&#58; Add Manifest
 ---
 
 ## Overview
-The [manifest file](https://w3c.github.io/manifest/) is a JSON formatted file used to describe your app and how it should appear when it's installed to the home screen. This includes properties like the app name, icons and how it should be launched when the icon is clicked.
+The [manifest file](https://w3c.github.io/manifest/) is a JSON formatted file used to describe your app and how it should appear when it's installed to the home screen. This includes properties like the app name, icons and attributes about how it should be launched when the icon is clicked.
 
 ## Exercise 
 
@@ -47,18 +47,18 @@ The [manifest file](https://w3c.github.io/manifest/) is a JSON formatted file us
 
    >You can also set an `orientation` property if desired, default is `portrait`.
 
-3. Next you need to tell your app to use this new manifest file. Open the **www/index.html** file and add a link to it anywhere before the closing HTML `</head>` tag.
+3. Next you need to tell your app to use this new manifest file. Open the **www/index.html** file and add a link to it anywhere before the closing HTML `</head>` tag:
 
         <link rel="manifest" href="manifest.json">
 
-4. If you're still serving the app from the previous lesson, simply refresh your browser otherwise run `phonegap serve` again and open the URL again. Next click on the dev tools **Application** tab in the top and the **manifest** tab on the left as shown below to ensure your manifest file was found:
- 
+4. If you're still serving the app from the previous lesson, simply refresh your browser, otherwise run `phonegap serve` again and re-open the URL. Next open the dev tools and click on the **Application** tab in the top, and the **manifest** tab on the left as shown below to ensure your manifest file was found:
+
  ![](images/manifest.png)
 
- >You can test out the **Add to homescreen** feature from here to ensure your app start URL is invoked properly but otherwise will need to try out the app using your Android device and a hosted app URL to see how the changes apply.
+  >You can test out the **Add to homescreen** feature from the browser like above to test out the start URL setting your app start URL is invoked properly for a quick test but otherwise will need to try out the app using your Android device and a hosted app URL to see how the changes apply.
 
 ## Device Testing
-I've created a hosted version of this app located at [https://todos-app-pwa.firebaseapp.com](https://todos-app-pwa.firebaseapp.com) you can try out from an Android device browser to see how the manifest settings affect the app. The screenshots below show this app running on an Android Pixel:
+There's a hosted version of this app located at [https://todos-app-pwa.firebaseapp.com](https://todos-app-pwa.firebaseapp.com) for you to try out from an Android device browser to see how the manifest settings affect the app overall. The screenshots below show it running on an Android Pixel:
 
 ![](images/hs1.png)
 

@@ -11,7 +11,6 @@ A popular pattern for service workers is to use them to cache the app shell or d
 
 2. Paste in the following code:
 
-
         // use a cacheName for cache versioning
         var cacheName = 'todos_offline_cache:v1'
         var goodCaches = [];
@@ -106,23 +105,23 @@ A popular pattern for service workers is to use them to cache the app shell or d
 
 4. Now run the application again using `phonegap serve`
 
-### Verify New Service Worker
-1. Go to the **Application** tab and click on the `service-worker` to see what code is running, and make sure there are no install errors or `skipWaiting()` events. 
+### Verify the new Service Worker
+1. Go to the **Application** tab and click on the `service-worker` to see what code is running, and make sure there are no install errors or `skipWaiting()` events.
 2. You should see console statements from the code added above.
 3. In the Application tab, you can take a look at the CacheStorage to see if your new cache is available and what's in it.
 4. You should no longer see the image loading if you commented out in this lesson.
 
   >Your service worker code may fail if you have a typo, or if your resource list in the install step does not resolve to the right path, then the promise will not resolve and install will not complete. To test if that's the problem, comment out that whole block from `caches.open(cacheName).then(function(cache) {return cache.addAll([...])` on and run again. 
 
-### Test Offline
-The **Application** tab has an option to simulate an offline event to see how it will still run when you go offline due to the cached resources but if you navigate to another site like CNN, you will get the dreaded dinosaur:
+### Test it in Offline Mode
+1. The **Application** tab has an option to simulate an offline event to see how it will still run when you go offline due to the cached resources but if you navigate to another site like CNN, you will get the dreaded dinosaur:
 
   ![](images/web-running-offline.png)
   ![](images/cnn-offline.png)
 
-   >You will want to try this hosted somewhere to get the true effect. You can host your site securely using github pages or a solution like Firebase (see lesson 7). Or simply check out the [hosted demo here](https://hollyschinsky.github.io/todos-app-pwa) for how the offline handling works.
+   >You will want to try this with your app hosted somewhere to get the true effect. You can host your site securely using github pages or a solution like Firebase (see lesson 7). Or simply check out the [hosted demo here](https://hollyschinsky.github.io/todos-app-pwa) for how the offline handling works.
 
-You can also view the **Cache Storage** items that the service worker has stored in the **Application** tab as shown in the screenshot below:
+2. You can also view the **Cache Storage** items that the service worker has stored in the **Application** tab as shown in the screenshot below:
 
   ![](images/sw-cache.png)
 

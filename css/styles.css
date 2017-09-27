@@ -88,7 +88,8 @@ blockquote {
     border: 1px solid transparent;
     border-radius: 4px;
     color: #31708f;
-    background-color: #d9edf7;
+    /*background-color: #d9edf7;*/
+    background-color: #3550D9;
     /*color: #efefef;    */
     /*background-color: #323232;*/
 
