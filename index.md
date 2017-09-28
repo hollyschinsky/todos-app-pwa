@@ -8,7 +8,7 @@ title:  PhoneGap Workshop - Cross Platform Progressive Web Apps
 In this workshop you will learn how to take an existing PhoneGap app and transform it into a fully functioning cross platform 
 [Progressive Web App (PWA)](https://developers.google.com/web/progressive-web-apps/) with Offline support.
 
-Check out [the hosted version of the final app here](https://https://todos-app-pwa.firebaseapp.com/).
+Check out [the hosted version of the final app here](https://todos-app-pwa.firebaseapp.com/).
 
 ### App Stack
 The app was built using [Framework7](http://framework7.io) and [Vue.js](http://vuejs.org) and [Apache Cordova](http://cordova.apache.org/).

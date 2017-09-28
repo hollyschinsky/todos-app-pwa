@@ -53,7 +53,7 @@ In this lesson we will create a starter project and get a copy of the final proj
 
 ![](images/starter-app-served.png)
 
- >The Vue developer tools Chrome extension shown in the above is useful for debugging your apps built with this app stack in the future, and requires the non-minified version of vue. This is not required for this workshop.
+  >The Vue developer tools Chrome extension shown in the above is useful for debugging your apps built with this app stack in the future, and requires the non-minified version of vue. This is not required for this workshop.
 
 ### PhoneGap CLI Alternatives
 If you're using the Cordova CLI you will need to add the `browser` platform first (`cordova platform add browser`), then run `cordova serve` and open `http://localhost:8000/browser/` in the browser. If you are using PhoneGap Desktop, hit the green _play_ icon to start the server and then navigate to the URL shown in the bottom status bar.
