@@ -87,9 +87,12 @@ blockquote {
     margin-bottom: 20px;
     border: 1px solid transparent;
     border-radius: 4px;
-    color: #31708f;
-    /*background-color: #d9edf7;*/
+    /*color: #31708f;*/
+    color: #edeaea;
+    
+    /*background-color: #5793dc;*/
     background-color: #3550D9;
+    /*background-color: #EED800;*/
     /*color: #efefef;    */
     /*background-color: #323232;*/
 
@@ -99,9 +102,9 @@ blockquote {
     /*background-color: #fff4e0;*/
     border-color: rgb(210, 209, 210);
 }
-/*blockquote a {
-    color: #0e31df;
-}*/
+blockquote a {
+    color: #EED800;
+}
 
 
 h2 {

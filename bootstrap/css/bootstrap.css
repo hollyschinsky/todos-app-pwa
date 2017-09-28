@@ -288,7 +288,7 @@ textarea {
   line-height: inherit;
 }
 a {
-  color: #3550D9;
+  color: #428bca;
   text-decoration: none;
 }
 a:hover,
@@ -514,7 +514,7 @@ a.text-success:hover {
   color: #2b542c;
 }
 .text-info {
-  color: #31708f;
+  color: #000000;
 }
 a.text-info:hover {
   color: #245269;

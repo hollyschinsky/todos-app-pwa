@@ -6,8 +6,8 @@ title: Lesson 6&#58; PhoneGap Service Worker Plugin
 ## Overview
 It's a well-known fact that Apple currently does not support service workers on iOS. There's nothing much we can do about that when running our apps in the device browser on iOS, however, with Cordova/PhoneGap we have the ability to access native device features via plugins and essentially polyfill the service worker code natively.
 
-There's actually a plugin available now that adds service worker support to your Cordova iOS apps, called [phonegap-plugin-service-worker](https://github.com/phonegap/phonegap-plugin-service-worker)
-This plugin was originally built by the [Mobile Chrome Apps team](https://github.com/MobileChromeApps) and subsequently forked by the PhoneGap team with some minor updates. It's undergoing further change but there are some basic features available now, specifically the caching/fetching APIs. 
+There's actually a plugin available now that adds service worker support to your Cordova iOS apps, called [phonegap-plugin-service-worker](https://github.com/phonegap/phonegap-plugin-service-worker).
+This plugin was originally built by the [Mobile Chrome Apps team](https://github.com/MobileChromeApps) and subsequently forked by the PhoneGap team with some minor updates. It's undergoing further change but there are some basic features available now, specifically the caching/fetching APIs.
 
 ## Exercise
 
@@ -15,7 +15,7 @@ This plugin was originally built by the [Mobile Chrome Apps team](https://github
 
     `phonegap plugin add https://github.com/phonegap/phonegap-plugin-service-worker`
 
-   > If you're using a recent version of the PhoneGap CLI, this plugin will automatically be saved to your config.xml. If you are running an older version you can add the `--save` to the command to ensure that it's saved.
+   >If you're using a recent version of the PhoneGap CLI, this plugin will automatically be saved to your config.xml. If you are running an older version you can add the `--save` to the command to ensure that it's saved.
 
 2. Open your **config.xml** and look to ensure you see the plugin tag added like below:
 
@@ -45,11 +45,11 @@ This plugin was originally built by the [Mobile Chrome Apps team](https://github
 
     `phonegap prepare ios`
 
-5. Next open the **my-proj.xcodeproject** file created in the **~/pgday/todos-app-starter/platforms/ios/** folder in Xcode. For instance, if you named your project **todos-app-starter** then it will be named **todos-app-starter.xcodeproject**. 
+5. Next open the **my-proj.xcodeproject** file created in the **~/pgday/todos-app-starter/platforms/ios/** folder in Xcode. For instance, if you named your project **todos-app-starter** then it will be named **todos-app-starter.xcodeproject**.
 
-6. Run the app from Xcode and watch the console for the service worker generated statements which indicate if a file was fetched or retrieved from the cache. 
+6. Run the app from Xcode and watch the console for the service worker generated statements which indicate if a file was fetched or retrieved from the cache.
 
-   ![](images/ios-log.png)
+  ![](images/ios-log.png)
 
   Subsequent runs should show the files fetched from the cache.
 

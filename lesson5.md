@@ -3,12 +3,11 @@ layout: module
 title: Lesson 5&#58; Add Offline Support
 ---
 ## Overview
-A popular pattern for service workers is to use them to cache the app shell or dependent assets required to make the app functional so when the app is offline it will still load. This aproach also helps with performance since the app will load more quickly each time it's run. When a resource needs to be fetched, the service worker will try to load it from the cache first, then fall back to the network.
+A popular pattern for service workers is to use them to cache the app shell or dependent assets required to make the app functional so when the app is offline it will still load. This approach also helps with performance since the app will load more quickly each time it's run. When a resource needs to be fetched, the service worker will try to load it from the cache first, then fall back to the network.
 
 ## Exercise
 
-1. Remove the code inside the **service-worker.js** that we added in the last exercise, we are going to do a new pattern in this exercise.
-
+1. Remove the code inside the **service-worker.js** that we added in the last exercise, we are going to use a new pattern in this exercise.
 2. Paste in the following code:
 
         // use a cacheName for cache versioning
@@ -102,7 +101,6 @@ A popular pattern for service workers is to use them to cache the app shell or d
         });
 
 3. Comment out the `<img logo.png>` tag in **index.html** that we used for testing in the last exercise, you won't need that here.
-
 4. Now run the application again using `phonegap serve`
 
 ### Verify the new Service Worker
@@ -111,17 +109,18 @@ A popular pattern for service workers is to use them to cache the app shell or d
 3. In the Application tab, you can take a look at the CacheStorage to see if your new cache is available and what's in it.
 4. You should no longer see the image loading if you commented out in this lesson.
 
-  >Your service worker code may fail if you have a typo, or if your resource list in the install step does not resolve to the right path, then the promise will not resolve and install will not complete. To test if that's the problem, comment out that whole block from `caches.open(cacheName).then(function(cache) {return cache.addAll([...])` on and run again. 
+   >Your service worker code may fail if you have a typo, or if your resource list in the install step does not resolve to the right path, then the promise will not resolve and install will not complete. To test if that's the problem, comment out that whole block from `caches.open(cacheName).then(function(cache) {return cache.addAll([...])` on and run again. 
 
 ### Test it in Offline Mode
-1. The **Application** tab has an option to simulate an offline event to see how it will still run when you go offline due to the cached resources but if you navigate to another site like CNN, you will get the dreaded dinosaur:
 
-  ![](images/web-running-offline.png)
-  ![](images/cnn-offline.png)
+- The **Application** tab has an option to simulate an offline event to see how it will still run when you go offline due to the cached resources but if you navigate to another site like CNN, you will get the dreaded dinosaur:
 
-   >You will want to try this with your app hosted somewhere to get the true effect. You can host your site securely using github pages or a solution like Firebase (see lesson 7). Or simply check out the [hosted demo here](https://hollyschinsky.github.io/todos-app-pwa) for how the offline handling works.
+ ![](images/web-running-offline.png)
+ ![](images/cnn-offline.png)
 
-2. You can also view the **Cache Storage** items that the service worker has stored in the **Application** tab as shown in the screenshot below:
+ >You will want to try this with your app hosted somewhere to get the true effect. You can host your site securely using [GitHub Pages](https://pages.github.com/) or a solution like [Firebase](https://firebase.google.com/) (covered in lesson 8). Or simply check out the [hosted demo here](https://hollyschinsky.github.io/todos-app-pwa) for how the offline handling works.
+
+- You can also view the **Cache Storage** items that the service worker has stored in the **Application** tab as shown in the screenshot below:
 
   ![](images/sw-cache.png)
 

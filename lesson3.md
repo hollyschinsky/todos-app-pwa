@@ -57,7 +57,7 @@ Open the **www/index.html** file in your **todos-app-starter** app and go throug
 
         <meta name="msapplication-TileColor" content="#2F3BA2">
 
-> See the [Microsoft Pinned site metadata reference](https://msdn.microsoft.com/en-us/library/dn255024(v=vs.85).aspx) for more details.
+  > See the [Microsoft Pinned site metadata reference](https://msdn.microsoft.com/en-us/library/dn255024(v=vs.85).aspx) for more details.
 
 ## Resources
 - [Don’t use iOS meta tags irresponsibly in your Progressive Web Apps](https://medium.com/@firt/dont-use-ios-web-app-meta-tag-irresponsibly-in-your-progressive-web-apps-85d70f4438cb)
