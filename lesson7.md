@@ -9,11 +9,11 @@ Lighthouse is an open-source, automated tool for helping you to imrpove the perf
 When auditing a page, Lighthouse runs a barrage of tests against the page, and then generates a report on how well the page did. From here you can use the failing tests as indicators on what you can do to improve your app.
 
 ## Exercise
-1. Install the [Lighthouse Chrome Extension]((https://chrome.google.com/webstore/detail/lighthouse/blipmdconlkpinefehnmjammfjpmpbjk?hl=en))
+1. Install the [Lighthouse Chrome Extension](https://chrome.google.com/webstore/detail/lighthouse/blipmdconlkpinefehnmjammfjpmpbjk?hl=en)
 
    >Google announced that the Lighthouse tool will be included in an upcoming version of the browser by default. 
 
-2. Run the report on your site, check ou the score and areas where you lost points for tips
+2. Run the report on your site, check out the score and areas where you lost points for tips.
 
 3. Increase your score by adding the following snippet before the closing `<\body>` tag to provide a more useful message indicating the situation when your pages can't load.
 
@@ -22,7 +22,7 @@ When auditing a page, Lighthouse runs a barrage of tests against the page, and t
         </noscript>
 
 ## Resources
-- [Lighthouse Website](https://developers.google.com/web/tools/lighthouse/)
+- [sLighthouse Website](https://developers.google.com/web/tools/lighthouse/)
 - [Debugging Progressive Web Apps](https://developers.google.com/web/tools/chrome-devtools/progressive-web-apps)
 - [Debugging Service Workers](https://developers.google.com/web/fundamentals/getting-started/codelabs/debugging-service-workers/)
 - [Progressive Web App Checklist](https://developers.google.com/web/progressive-web-apps/checklist)

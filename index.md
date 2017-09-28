@@ -11,7 +11,7 @@ In this workshop you will learn how to take an existing PhoneGap app and transfo
 Check out [the hosted version of the final app here](https://todos-app-pwa.firebaseapp.com/).
 
 ### App Stack
-The app was built using [Framework7](http://framework7.io) and [Vue.js](http://vuejs.org) and [Apache Cordova](http://cordova.apache.org/).
+The app was built using [Framework7](http://framework7.io), [Vue.js](http://vuejs.org) and [Apache Cordova](http://cordova.apache.org/).
 
 
 ### Project Repo 
