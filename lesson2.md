@@ -1,6 +1,6 @@
 ---
 layout: module
-title: Lesson 2&#58; Add Manifest
+title: Lesson 2&#58; Add a Manifest
 ---
 
 ## Overview
@@ -66,6 +66,7 @@ There's a hosted version of this app located at [https://todos-app-pwa.firebasea
 
 ## Resources
 - [W3C Manifest Spec](https://w3c.github.io/manifest/)
+- [The Web App Manifest](https://developers.google.com/web/fundamentals/web-app-manifest/)
 - [AndroidAssetStudio](https://romannurik.github.io/AndroidAssetStudio/) - helps you create your icons for different resolutions for Android.
 - [Debugging Progressive Web Apps](https://developers.google.com/web/tools/chrome-devtools/progressive-web-apps)
 

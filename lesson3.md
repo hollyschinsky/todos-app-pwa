@@ -62,6 +62,7 @@ Open the **www/index.html** file in your **todos-app-starter** app and go throug
 ## Resources
 - [Don’t use iOS meta tags irresponsibly in your Progressive Web Apps](https://medium.com/@firt/dont-use-ios-web-app-meta-tag-irresponsibly-in-your-progressive-web-apps-85d70f4438cb)
 - [iOS Configuring Web Apps Guide](https://developer.apple.com/library/content/documentation/AppleApplications/Reference/SafariWebContent/ConfiguringWebApplications/ConfiguringWebApplications.html).
+- [A collection of HTML head elements](https://www.w3resource.com/slides/head.php)
 - [Microsoft Pinned Site Enhancements](https://msdn.microsoft.com/en-us/library/bg183312(v=vs.85).aspx#)
 
 <div class="row" style="margin-top:40px;">
