@@ -10,8 +10,9 @@ self.addEventListener('install', function(e) {
     e.waitUntil(
         caches.open(cacheName).then(function(cache) {
             return cache.addAll([
-                // If we don't add the root, we must navigatee to http://localhost:3000/index.html when offline
-                '/',  
+                // If we don't add the root, we must navigate to http://localhost:3000/index.html when offline
+                // Must be commented out when running with service-worker plugin
+                /*'/',*/
                 '/index.html',
                 '/manifest.json',                
                 '/css/app.css',
@@ -20,11 +21,14 @@ self.addEventListener('install', function(e) {
                 '/js/app.js',
                 '/js/todos.js',
                 '/js/init-styles.js',
-                '/cordova.js',
+                // The commented out block below is useful when running the browser platform (phonegap serve) or when
+                // running on the device itself, otherwise leave commented out. 
+                /*'/cordova.js',
                 '/cordova_plugins.js',
-                // '/socket.io/socket.io.js',
-                '/plugins/cordova-plugin-statusbar/www/statusbar.js',
-                '/plugins/cordova-plugin-statusbar/src/browser/StatusBarProxy.js',
+                '/socket.io/socket.io.js',
+                '/plugins/cordova-plugin-statusbar/www/statusbar.js',*/
+                /* This next line is only necessary when testing with the PhoneGap browser platform                
+                '/plugins/cordova-plugin-statusbar/src/browser/StatusBarProxy.js',*/
                 '/lib/framework7/css/framework7.ios.colors.min.css',
                 '/lib/framework7/css/framework7.ios.min.css',
                 '/lib/framework7/css/framework7.ios.rtl.min.css',

@@ -45,8 +45,8 @@
     
   <title>My Todo App</title>
   
-  <!-- See js/init-styles.jswhere we load F7 style sheets based on platform -->
-  <link rel="stylesheet" href="css/app.css">  
+  <!-- See js/init-styles.js where we load F7 style sheets based on platform -->
+  <!--<link rel="stylesheet" href="css/app.css">-->  
   <link rel="stylesheet" href="css/framework7-icons.css">
 
 </head>
@@ -88,12 +88,12 @@
 
         <f7-navbar sliding v-if="$theme.ios">
           <f7-nav-left>
-            <!--<f7-link icon-f7="bars" open-panel="side-panel"></f7-link>-->
+            <!--<f7-link icon-f7="bars" open-panel="side-panel"></f7-link>            -->
             <f7-link icon="icon-bars" open-panel="side-panel"></f7-link>
           </f7-nav-left>
           <f7-nav-center>Todo List</f7-nav-center>
           <f7-nav-right>
-            <f7-link icon-f7="add" open-popup="#todo-popup"></f7-link>        
+            <f7-link icon-f7="add" open-popup="#todo-popup"></f7-link>            
           </f7-nav-right>
         </f7-navbar>
      
@@ -112,16 +112,16 @@
     <f7-page id="mainPage" data-page="mainPage" tabbar-fixed :with-subnavbar="isMaterial">       
       <f7-navbar sliding>
         <f7-nav-left>
-          <f7-link icon-f7="bars" open-panel="side-panel"></f7-link>
+          <f7-link icon-f7="bars" open-panel="side-panel"></f7-link>          
         </f7-nav-left>
         <f7-nav-center>Todo List</f7-nav-center>
         <f7-nav-right>
-          <f7-link icon-f7="add" open-popup="#todo-popup"></f7-link>        
+         <f7-link icon-f7="add" open-popup="#todo-popup"></f7-link>         
         </f7-nav-right>
      </f7-navbar>
       
       <f7-toolbar tabbar :labels="isiOS">
-          <f7-link :icon-f7="isiOS ? 'list' : ''" text="Pending" tab-link="#pending" active></f7-link>
+          <f7-link :icon-f7="isiOS ? 'list' : ''" text="Pending" tab-link="#pending" active></f7-link>          
           <f7-link :icon-f7="isiOS ? 'check' : ''" text="Completed" tab-link="#completed"></f7-link>
       </f7-toolbar>
 
@@ -141,14 +141,14 @@
   <template id="page-pending">
     <f7-page>
         <f7-block-title>{{ title }}</f7-block-title> 
-       <!-- <img src="img/logo.png" width="320" height="240">-->
+        <!-- USE FOR NETWORK INTERCEPT LESSON -->
+        <!-- <img src="img/logo.png" width="320" height="240">-->
         <f7-list v-if="todos.length > 0">      
           <f7-list-item v-for="(todo, key) in todos" :key="key" v-if="displayItem(todo)"
             :checked="(todo.completed ? true : false)" :data-index="key"
             @click="onToggle(todo,key)" :title="(todo.urgent ? '<b><font color=red>!!</font></b> ' + todo.title : todo.title)" 
             :class="[todo.highlight ? 'bg-yellow' : '']" swipeout checkbox>        
           <f7-swipeout-actions>
-            <!--<f7-swipeout-button close @click="onItemEdited(todo)" color="green">Edit</f7-swipeout-button>-->
             <f7-swipeout-button close @click="onItemDeleted(todo)" color="red">Delete</f7-swipeout-button>           
           </f7-swipeout-actions>  
           </f7-list-item>     
@@ -168,7 +168,6 @@
           :title="(todo.urgent ? '<b><font color=red>!!</font></b> ' + todo.title : todo.title)" 
           :class="[todo.highlight ? 'bg-yellow' : '']" swipeout checkbox>
         <f7-swipeout-actions>
-          <!--<f7-swipeout-button close @click="onItemEdited(todo)" open-popup color="green">Edit</f7-swipeout-button>-->
           <f7-swipeout-button close @click="onItemDeleted(todo)" color="red">Delete</f7-swipeout-button>                   
         </f7-swipeout-actions>        
         </f7-list-item>            
@@ -200,9 +199,9 @@
 
   <!--<script src="cordova.js"></script> -->
   <script src="lib/framework7/js/framework7.min.js"></script>
-  <!--<script src="lib/vue/vue.min.js"></script> -->
+  <script src="lib/vue/vue.min.js"></script>
   <!-- Use this non-minified version for debugging with chrome vue tool --> 
-  <script src="lib/vue/vue.js"></script>
+  <!--<script src="lib/vue/vue.js"></script>-->
   <script src="lib/framework7-vue/framework7-vue.min.js"></script>
   <script src="js/init-styles.js"></script>  
   <script src="js/todos.js"></script>
