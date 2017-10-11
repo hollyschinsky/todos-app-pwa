@@ -22,12 +22,13 @@ When auditing a page, Lighthouse runs a barrage of tests against the page, and t
         </noscript>
 
 ## Resources
-- [sLighthouse Website](https://developers.google.com/web/tools/lighthouse/)
+- [Lighthouse Website](https://developers.google.com/web/tools/lighthouse/)
 - [Debugging Progressive Web Apps](https://developers.google.com/web/tools/chrome-devtools/progressive-web-apps)
 - [Debugging Service Workers](https://developers.google.com/web/fundamentals/getting-started/codelabs/debugging-service-workers/)
 - [Progressive Web App Checklist](https://developers.google.com/web/progressive-web-apps/checklist)
 - [Lighthouse Chrome Extension](https://chrome.google.com/webstore/detail/lighthouse/blipmdconlkpinefehnmjammfjpmpbjk?hl=en)
 - [Lighthouse Quickstart Guide](http://bit.ly/lighthouse-quickstart)
+- [Vue CLI PWA Template](https://github.com/vuejs-templates/pwa)
 
 <div class="row" style="margin-top:40px;">
 <div class="col-sm-12">
