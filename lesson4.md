@@ -16,20 +16,20 @@ A useful feature of service workers is the concept of _Network Interception_. It
         });
 
         self.addEventListener('activate', function(event) {
-        console.log('[ServiceWorker] Activate');
+            console.log('[ServiceWorker] Activate');
         });
 
         self.addEventListener('fetch', function(event) {
-        console.log('Network intercept example - checking URL for png ', event.request.url);
-        if (/\.png$/.test(event.request.url)) {
-            event.respondWith(
-                fetch('http://addolo.com/wp-content/uploads/2017/01/90-stunning-silly-cat-pictures-image-inspirations-1280x960-wallpapersother-wallpapers-with-captions.jpg',
-                { mode: 'no-cors' }).then(function(response) {
-                    console.log("Response from network intercept " + response);
-                    return response;
-                })
-            )}
-        else return fetch(event.request);
+            console.log('Network intercept example - checking URL for png ', event.request.url);
+            if (/\.png$/.test(event.request.url)) {
+                event.respondWith(
+                    fetch('http://addolo.com/wp-content/uploads/2017/01/90-stunning-silly-cat-pictures-image-inspirations-1280x960-wallpapersother-wallpapers-with-captions.jpg',
+                    { mode: 'no-cors' }).then(function(response) {
+                        console.log("Response from network intercept " + response);
+                        return response;
+                    })
+                )}
+            else return fetch(event.request);
         });
 
    >This code simply creates handlers for the `install` and `activate` events with logging statements, but then in the `fetch` event intercepts a call to load a **.png** file and instead returns a silly cat pic.
