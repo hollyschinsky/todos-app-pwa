@@ -36,10 +36,10 @@ In this lesson we will create a starter project and get a copy of the final proj
 
 2. Next get a copy of [the final app project](https://github.com/hollyschinsky/todos-app-pwa/). The best way to do this is to create another PhoneGap project and specify the final Todos PWA app for reference with the following command:
 
-```
+   ```
    phonegap create todos-app-pwa com.phonegap.todos TodosAppPWA --template https://github.com/hollyschinsky/todos-app-pwa
    ```
-
+   
 3. You should now have a **pgday** folder with the two projects below:
 
          ../pgday/todos-app-starter
