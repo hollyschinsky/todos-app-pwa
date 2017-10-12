@@ -9,11 +9,12 @@ A popular pattern for service workers is to use them to cache the app shell or d
 
 1. Replace the code inside the **service-worker.js** with the following code:
 
+```
     // use a cacheName for cache versioning
     var cacheName = 'todos_offline_cache:v1'
     var goodCaches = [];
     goodCaches.push(cacheName);
-    goodCaches.push('CordovaAssets'); // For Cordova Plugin caching when config.xml set to true
+    goodCaches.push('CordovaAssets'); 
 
     // during the install phase you usually want to cache static assets
     self.addEventListener('install', function(e) {
@@ -64,8 +65,8 @@ A popular pattern for service workers is to use them to cache the app shell or d
     });
 
     self.addEventListener('activate', function(event) {
-    console.log('[ServiceWorker] Activate');
-    event.waitUntil(
+        console.log('[ServiceWorker] Activate');
+        event.waitUntil(
             caches.keys().then(function(cacheNames) {
                 return Promise.all(
                     cacheNames.map(function(cacheKey) {
@@ -81,7 +82,7 @@ A popular pattern for service workers is to use them to cache the app shell or d
     });
 
     self.addEventListener('fetch', function(event) {    
-    console.log('Handling fetch event for ' + event.request.url);  
+        console.log('Handling fetch event for ' + event.request.url);  
         event.respondWith(
             caches.match(event.request).then(function(response) {
                 if (response) {
@@ -90,9 +91,10 @@ A popular pattern for service workers is to use them to cache the app shell or d
                 }
                 console.log('No response found in cache. Fetch from network...');
                 return fetch(event.request);
-            })               
-        );  
+            })
+        );
     });
+```
 
 3. Comment out the `<img logo.png>` tag in **index.html** from the last exercise, you won't need that here.
 4. Now run the application again using `phonegap serve`
