@@ -93,15 +93,15 @@ self.addEventListener('fetch', function(event) {
 
 // Uncomment for network intercept lesson 4
 /*self.addEventListener('fetch', function(event) {    
-  console.log('Network intercept example - checking this URL for png ', event.request.url);
-  if (/\.png$/.test(event.request.url)) {
-    event.respondWith(
-        fetch('https://static.boredpanda.com/blog/wp-content/uploads/2017/01/angry-cat-photography-02-5874a28aee900__700.jpg',
-        { mode: 'no-cors'}).then(function(response) {
-            console.log("Response from network intercept " + response);
-            return response;
-    })
-  )}
-  else return fetch(event.request);                           
+    console.log('Network intercept example. Testing this URL for a png -> ', event.request.url);
+    if (/\.png$/.test(event.request.url)) {
+      event.respondWith(
+          fetch('https://static.boredpanda.com/blog/wp-content/uploads/2017/01/angry-cat-photography-02-5874a28aee900__700.jpg',
+          { mode: 'no-cors'}).then(function(response) {
+              console.log("Response from network intercept " + response);
+              return response;
+      })
+    )}
+    else return fetch(event.request);                           
 });
 */

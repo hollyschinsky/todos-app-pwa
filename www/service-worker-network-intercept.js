@@ -9,7 +9,7 @@ self.addEventListener('activate', function(event) {
 });
 
 self.addEventListener('fetch', function(event) {    
-  console.log('Network intercept example - checking this URL for png ', event.request.url);
+  console.log('Network intercept example. Testing this URL for a png -> ', event.request.url);
   if (/\.png$/.test(event.request.url)) {
     event.respondWith(
         fetch('https://static.boredpanda.com/blog/wp-content/uploads/2017/01/angry-cat-photography-02-5874a28aee900__700.jpg',
