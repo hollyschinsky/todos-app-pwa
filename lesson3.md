@@ -27,18 +27,17 @@ In your **todos-app-starter** app, open the **www/index.html** file and go throu
 
     `<meta name="apple-mobile-web-app-title" content="Todo List">`
 
-   >If you don't specify this tag, iOS will use the `<title>` tag. If that is missing too, it will default to “Favorites”. Also note that the title is limited to 8 to 12 characters.    
-
+   >If you don't specify this tag, iOS will use the `<title>` tag. If that is missing too, it will default to “Favorites”. Also note that the title is limited to 8 to 12 characters.
 
 - Set the icon to use when the app is added to the home screen:
 
     `<link rel="apple-touch-icon" href="img/icons/apple-touch-icon.png">`
- 
+
   >By default, the icon is a screenshot of the page. If there are no icon tags, Safari will try various URLs depending on the device. You should check out the [Apple docs](https://developer.apple.com/library/content/documentation/AppleApplications/Reference/SafariWebContent/ConfiguringWebApplications/ConfiguringWebApplications.html) specifically  for for how to set different sizes and resolutions for your icons.
 
 - Set the startup image to launch when your app is launched from the home screen with the following tag:
 
-    `<link rel="apple-touch-startup-image" href="img/Default-Portrait.png"> `
+    `<link rel="apple-touch-startup-image" href="img/Default-Portrait.png">`
 
   >You should check out the [Apple docs](https://developer.apple.com/library/content/documentation/AppleApplications/Reference/SafariWebContent/ConfiguringWebApplications/ConfiguringWebApplications.html) specifically  for for how to set different sizes and resolutions for your launch images.
 

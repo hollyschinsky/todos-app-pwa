@@ -12,40 +12,45 @@ The [manifest file](https://w3c.github.io/manifest/) is a JSON formatted file us
 
 2. Paste in the the following definition:
 
-            {
-            "manifest_version": 2,  
-            "name": "Todo List", 
-            "version": "1.0.0",
-            "short_name": "TODO's", 
-            "icons": [{
-                "src": "img/icons/icon-128x128.png",
-                "sizes": "128x128",
-                "type": "image/png"
-                }, {
-                "src": "img/icons/icon-144x144.png",
-                "sizes": "144x144",
-                "type": "image/png"
-                }, {
-                "src": "img/icons/icon-152x152.png",
-                "sizes": "152x152",
-                "type": "image/png"
-                }, {
-                "src": "img/icons/icon-192x192.png",
-                "sizes": "192x192",
-                "type": "image/png"
-                }, {
-                "src": "img/icons/icon-256x256.png",
-                "sizes": "256x256",
-                "type": "image/png"
-                }],
-            "start_url": "/index.html",
-            "display": "standalone",
-            "background_color": "#2196F3",
-            "theme_color": "#2196F3"
-            }
+```
+        {
+        "manifest_version": 2,
+        "name": "Todo List",
+        "version": "1.0.0",
+        "short_name": "TODO's",
+        "icons": [{
+            "src": "img/icons/icon-128x128.png",
+            "sizes": "128x128",
+            "type": "image/png"
+            }, {
+            "src": "img/icons/icon-144x144.png",
+            "sizes": "144x144",
+            "type": "image/png"
+            }, {
+            "src": "img/icons/icon-152x152.png",
+            "sizes": "152x152",
+            "type": "image/png"
+            }, {
+            "src": "img/icons/icon-192x192.png",
+            "sizes": "192x192",
+            "type": "image/png"
+            }, {
+            "src": "img/icons/icon-256x256.png",
+            "sizes": "256x256",
+            "type": "image/png"
+            }, {
+            "src": "img/icons/icon-512x512.png",
+            "sizes": "512x512",
+            "type": "image/png"
+            }],
+        "start_url": "/index.html",
+        "display": "standalone",
+        "background_color": "#2196F3",
+        "theme_color": "#2196F3"
+        }
+```
 
-
-   >You can also set an `orientation` property if desired, default is `portrait`.
+   >You can also set an `orientation` property if desired, the default is `portrait`.
 
 3. Next you need to tell your app to use this new manifest file. Open the **www/index.html** file and add a link to it anywhere before the closing HTML `</head>` tag:
 

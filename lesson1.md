@@ -34,7 +34,7 @@ In this lesson we will create a starter project and get a copy of the final proj
 
    >If you only have the Desktop app you can still use it to create a new project and just select the blank template. You will need to download or clone the [todos-app-starter](https://github.com/hollyschinsky/pwa-workshop-starter) app first and then replace the `www` folder and `config.xml` in your newly project with those from the **todos-app-starter** repo.
 
-2. Next get a copy of [the final app project]. Create another PhoneGap project to use with the final Todos PWA app for reference with the following command: 
+2. Next get a copy of [the final app project](https://github.com/hollyschinsky/todos-app-pwa/). The best way to do this is to create another PhoneGap project and specify the final Todos PWA app for reference with the following command:
 
 ```
    phonegap create todos-app-pwa com.phonegap.todos TodosAppPWA --template https://github.com/hollyschinsky/todos-app-pwa
@@ -54,8 +54,6 @@ In this lesson we will create a starter project and get a copy of the final proj
 - Open the Chrome dev tools tools with the `Option+Command+I` combination or via the **View -> Developer** option from the menu and use the mobile emulator tools to see how the app looks on different devices. You will need to reload the page if switching between an android or ios device to pick up the other style sheet.
 
 ![](images/starter-app-served.png)
-
-  >The Vue developer tools Chrome extension shown in the above is useful for debugging your apps built with this app stack in the future, and requires the non-minified version of vue. This is not required for this workshop.
 
 ### PhoneGap CLI Alternatives
 If you're using the Cordova CLI you will need to add the `browser` platform first (`cordova platform add browser`), then run `cordova serve` and open `http://localhost:8000/browser/` in the browser. If you are using PhoneGap Desktop, hit the green _play_ icon to start the server and then navigate to the URL shown in the bottom status bar.

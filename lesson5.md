@@ -57,6 +57,7 @@ A popular pattern for service workers is to use them to cache the app shell or d
                     '/img/icons/icon-152x152.png',
                     '/img/icons/icon-192x192.png',
                     '/img/icons/icon-256x256.png',
+                    '/img/icons/icon-512x512.png',
                 ]).then(function() {
                     self.skipWaiting();
                 });
@@ -73,7 +74,7 @@ A popular pattern for service workers is to use them to cache the app shell or d
                         console.log("** Cache key " + cacheKey);
                         if (goodCaches.indexOf(cacheKey) === -1) {
                             console.log("Deleting cache " + cacheKey);
-                            return caches.delete(cacheKey);    
+                            return caches.delete(cacheKey);
                         }
                     })
                 );
