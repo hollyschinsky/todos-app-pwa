@@ -9,96 +9,96 @@ A popular pattern for service workers is to use them to cache the app shell or d
 
 1. Replace the code inside the **service-worker.js** with the following code:
 
-```
-    // use a cacheName for cache versioning
-    var cacheName = 'todos_offline_cache:v1'
-    var goodCaches = [];
-    goodCaches.push(cacheName);
-    goodCaches.push('CordovaAssets'); 
 
-    // during the install phase you usually want to cache static assets
-    self.addEventListener('install', function(e) {
-        console.log('[ServiceWorker] Install!');
-        e.waitUntil(
-            caches.open(cacheName).then(function(cache) {
-                return cache.addAll([
-                    '/index.html',
-                    '/manifest.json',
-                    '/css/app.css',
-                    '/css/app.ios.css',
-                    '/css/app.material.css',
-                    '/js/app.js',
-                    '/js/todos.js',
-                    '/js/init-styles.js',
-                    '/lib/framework7/css/framework7.ios.colors.min.css',
-                    '/lib/framework7/css/framework7.ios.min.css',
-                    '/lib/framework7/css/framework7.ios.rtl.min.css',
-                    '/lib/framework7/css/framework7.material.colors.min.css',
-                    '/lib/framework7/css/framework7.material.min.css',
-                    '/lib/framework7/css/framework7.material.rtl.min.css',
-                    '/lib/framework7/js/framework7.min.js',
-                    '/css/framework7-icons.css',
-                    '/css/Framework7Icons-Regular.eot',
-                    '/css/Framework7Icons-Regular.ttf',
-                    '/css/Framework7Icons-Regular.woff',
-                    '/css/Framework7Icons-Regular.woff2',
-                    '/lib/framework7-vue/framework7-vue.min.js',
-                    '/lib/vue/vue.min.js',
-                    '/img/Default-Portrait.png',
-                    '/img/logo.png',
-                    '/img/icons/apple-touch-icon.png',
-                    '/img/icons/mstile-150x150.png',
-                    '/img/icons/safari-pinned-tab.svg',
-                    '/img/icons/favicon-16x16.png',
-                    '/img/icons/favicon-32x32.png',
-                    '/img/icons/favicon.ico',
-                    '/img/icons/icon-128x128.png',
-                    '/img/icons/icon-144x144.png',
-                    '/img/icons/icon-152x152.png',
-                    '/img/icons/icon-192x192.png',
-                    '/img/icons/icon-256x256.png',
-                    '/img/icons/icon-512x512.png',
-                ]).then(function() {
-                    self.skipWaiting();
-                });
-            })
-        );
-    });
+        // use a cacheName for cache versioning
+        var cacheName = 'todos_offline_cache:v1'
+        var goodCaches = [];
+        goodCaches.push(cacheName);
+        goodCaches.push('CordovaAssets'); 
 
-    self.addEventListener('activate', function(event) {
-        console.log('[ServiceWorker] Activate');
-        event.waitUntil(
-            caches.keys().then(function(cacheNames) {
-                return Promise.all(
-                    cacheNames.map(function(cacheKey) {
-                        console.log("** Cache key " + cacheKey);
-                        if (goodCaches.indexOf(cacheKey) === -1) {
-                            console.log("Deleting cache " + cacheKey);
-                            return caches.delete(cacheKey);
-                        }
-                    })
-                );
-            })
-        );
-    });
+        // during the install phase you usually want to cache static assets
+        self.addEventListener('install', function(e) {
+            console.log('[ServiceWorker] Install!');
+            e.waitUntil(
+                caches.open(cacheName).then(function(cache) {
+                    return cache.addAll([
+                        '/index.html',
+                        '/manifest.json',
+                        '/css/app.css',
+                        '/css/app.ios.css',
+                        '/css/app.material.css',
+                        '/js/app.js',
+                        '/js/todos.js',
+                        '/js/init-styles.js',
+                        '/lib/framework7/css/framework7.ios.colors.min.css',
+                        '/lib/framework7/css/framework7.ios.min.css',
+                        '/lib/framework7/css/framework7.ios.rtl.min.css',
+                        '/lib/framework7/css/framework7.material.colors.min.css',
+                        '/lib/framework7/css/framework7.material.min.css',
+                        '/lib/framework7/css/framework7.material.rtl.min.css',
+                        '/lib/framework7/js/framework7.min.js',
+                        '/css/framework7-icons.css',
+                        '/css/Framework7Icons-Regular.eot',
+                        '/css/Framework7Icons-Regular.ttf',
+                        '/css/Framework7Icons-Regular.woff',
+                        '/css/Framework7Icons-Regular.woff2',
+                        '/lib/framework7-vue/framework7-vue.min.js',
+                        '/lib/vue/vue.min.js',
+                        '/img/Default-Portrait.png',
+                        '/img/logo.png',
+                        '/img/icons/apple-touch-icon.png',
+                        '/img/icons/mstile-150x150.png',
+                        '/img/icons/safari-pinned-tab.svg',
+                        '/img/icons/favicon-16x16.png',
+                        '/img/icons/favicon-32x32.png',
+                        '/img/icons/favicon.ico',
+                        '/img/icons/icon-128x128.png',
+                        '/img/icons/icon-144x144.png',
+                        '/img/icons/icon-152x152.png',
+                        '/img/icons/icon-192x192.png',
+                        '/img/icons/icon-256x256.png',
+                        '/img/icons/icon-512x512.png',
+                    ]).then(function() {
+                        self.skipWaiting();
+                    });
+                })
+            );
+        });
 
-    self.addEventListener('fetch', function(event) {    
-        console.log('Handling fetch event for ' + event.request.url);  
-        event.respondWith(
-            caches.match(event.request).then(function(response) {
-                if (response) {
-                    console.log('Found response in cache:', response);
-                    return response;
-                }
-                console.log('No response found in cache. Fetch from network...');
-                return fetch(event.request);
-            })
-        );
-    });
-```
+        self.addEventListener('activate', function(event) {
+            console.log('[ServiceWorker] Activate');
+            event.waitUntil(
+                caches.keys().then(function(cacheNames) {
+                    return Promise.all(
+                        cacheNames.map(function(cacheKey) {
+                            console.log("** Cache key " + cacheKey);
+                            if (goodCaches.indexOf(cacheKey) === -1) {
+                                console.log("Deleting cache " + cacheKey);
+                                return caches.delete(cacheKey);
+                            }
+                        })
+                    );
+                })
+            );
+        });
 
-3. Comment out the `<img logo.png>` tag in **index.html** from the last exercise, you won't need that here.
-4. Now run the application again using `phonegap serve`
+        self.addEventListener('fetch', function(event) {    
+            console.log('Handling fetch event for ' + event.request.url);  
+            event.respondWith(
+                caches.match(event.request).then(function(response) {
+                    if (response) {
+                        console.log('Found response in cache:', response);
+                        return response;
+                    }
+                    console.log('No response found in cache. Fetch from network...');
+                    return fetch(event.request);
+                })
+            );
+        });
+
+
+3. Comment out the `<img logo.png>` tag in **index.html** from the last exercise, you won't need that anymore.
+4. Now run the app again using `phonegap serve`
 
 ### Verify the new Service Worker
 1. Go to the **Application** tab and click on the `service-worker` to see what code is running, and make sure there are no install errors or `skipWaiting()` events.
@@ -128,6 +128,8 @@ A popular pattern for service workers is to use them to cache the app shell or d
 
 ### Cache Storage Note
 - Notice the `activate` event has handling to delete old versions of caches that are left around. There's a quota of storage that needs to be managed so you will want to be sure to clean up old versions when a new service worker no longer needs it.
+
+![](images/delete-old-cache.png)
 
 ## Resources
 - [Service Workers Explained](https://github.com/w3c/ServiceWorker/blob/master/explainer.md)
