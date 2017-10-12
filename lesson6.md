@@ -41,9 +41,9 @@ This plugin was originally built by the [Mobile Chrome Apps team](https://github
             goodCaches.push(cacheName);
             goodCaches.push('CordovaAssets);
 
-4. Now run the PhoneGap CLI `prepare` command on iOS so the platform is added:
+4. Now run the PhoneGap CLI `build` command on iOS so the platform is added:
 
-    `phonegap prepare ios`
+    `phonegap build ios`
 
 5. Next open the **&lt;todos&gt;.xcodeproject** file created in the **~/pgday/todos-app-starter/platforms/ios/** folder in Xcode. For instance, if you named your project **todos-app-starter** then it will be named **todos-app-starter.xcodeproject**.
 
@@ -75,12 +75,14 @@ Then browse the data with the DB Browser:
 
 ![](images/db-browser.png)
 
->The cache name created by the **config.xml** preference when `CacheCordovaAssets` is true is called `CordovaAssets`. If you have another cache you're managing you should see both when you open the database file. 
+>The cache name created by the **config.xml** preference when `CacheCordovaAssets` is true is called `CordovaAssets`. If you have another cache you're managing you should see both when you open the database file.
 
 ### Network Intercept Test
-Go ahead and try out that same service worker code we tested in lesson 4 for network interception. You'll also need to uncomment the `<img... logo.png>` tag from `index.html`.
+Go ahead and try out that same service worker fetch code we tested in lesson 4 for network interception. You can uncomment the block in the **service-worker.js** file (don't forget to comment out the other fetch handler.  You'll also need to uncomment the `<img... logo.png>` tag from `index.html`.
 
-![](images/ios-network-intercept.png)
+>If you want to change the code directly in Xcode to test, make sure to update the code in the **sStaging** folder. If you edit your code in the root project you will just need to be sure to run `phonegap build` again to generate the new version for Xcode.
+
+  ![](images/cat-ios.png)
 
 <div class="row" style="margin-top:40px;">
 <div class="col-sm-12">
