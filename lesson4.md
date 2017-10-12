@@ -56,7 +56,7 @@ A useful feature of service workers is the concept of _Network Interception_. It
 
 5. You should see the app run with a silly cat picture as shown below. (**Note:** you may have to reload the page to see it depending on when the service worker took control).
 
-![](images/network-intercept1.png)
+![](images/cat.png)
 
 #### Recommended Reading
 - [Service Workers Explained](https://github.com/w3c/ServiceWorker/blob/master/explainer.md)
