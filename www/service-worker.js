@@ -44,15 +44,16 @@ self.addEventListener('install', function(e) {
                 '/img/icons/icon-144x144.png',
                 '/img/icons/icon-152x152.png',
                 '/img/icons/icon-192x192.png', 
-                '/img/icons/icon-256x256.png',     
+                '/img/icons/icon-256x256.png',
+                '/img/icons/icon-512x512.png',
                 // The commented out block below is useful when running the browser platform (phonegap serve) or when
                 // running on the device itself, otherwise leave commented out. 
                 /*'/cordova.js',
                 '/cordova_plugins.js',
                 '/plugins/cordova-plugin-statusbar/www/statusbar.js',*/
-                /* This next line is only necessary when testing with the PhoneGap browser platform                
-                '/plugins/cordova-plugin-statusbar/src/browser/StatusBarProxy.js',*/
                 /*'/socket.io/socket.io.js',*/                                  
+                /* This next line is only necessary when testing with the PhoneGap browser platform                
+                '/plugins/cordova-plugin-statusbar/src/browser/StatusBarProxy.js',*/                
             ]).then(function() {
                 self.skipWaiting();
             });
