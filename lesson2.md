@@ -4,7 +4,7 @@ title: Lesson 2&#58; Add a Manifest
 ---
 
 ## Overview
-The [manifest file](https://w3c.github.io/manifest/) is a JSON formatted file used to describe your app and how it should appear when it's installed to the home screen. This includes properties like the app name, icons and attributes about how it should be launched when the icon is clicked.
+The [manifest file](https://w3c.github.io/manifest/) is a JSON formatted file used to describe your app and how it should appear when it's installed to the home screen. This includes properties like the app name, and icons and attributes about how it should be launched when the icon is clicked.
 
 ## Exercise 
 

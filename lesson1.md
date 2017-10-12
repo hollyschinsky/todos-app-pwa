@@ -34,9 +34,11 @@ In this lesson we will create a starter project and get a copy of the final proj
 
    >If you only have the Desktop app you can still use it to create a new project and just select the blank template. You will need to download or clone the [todos-app-starter](https://github.com/hollyschinsky/pwa-workshop-starter) app first and then replace the `www` folder and `config.xml` in your newly project with those from the **todos-app-starter** repo.
 
-2. Next get a copy of [the final app project](https://github.com/hollyschinsky/todos-app-pwa) by either cloning it into to your root **pgday** folder with `git` or downloading the zip. You can use this project for reference throughout the workshop.
+2. Next get a copy of [the final app project]. Create another PhoneGap project to use with the final Todos PWA app for reference with the following command: 
 
-   ![](images/project-setup.png)
+```
+   phonegap create todos-app-pwa com.phonegap.todos TodosAppPWA --template https://github.com/hollyschinsky/todos-app-pwa
+   ```
 
 3. You should now have a **pgday** folder with the two projects below:
 

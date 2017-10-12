@@ -4,7 +4,7 @@ title: Lesson 4&#58; Network Interception
 ---
 
 ## Overview
-A useful feature of service workers is the concept of _Network Interception_. It can be used to intercept a fetch request and handle it however you need to, even by sending back a completely different response. In this exercise we'll see how it works by coding a simple service worker that intercepts an image request and returns a different fetched response.
+A useful feature of service workers is the concept of _Network Interception_. It can be used to intercept a fetch request and change the response returned. In this exercise we'll see how it works by coding a simple service worker that intercepts an image request and returns a different fetched response.
 
 ## Exercises
 

@@ -4,11 +4,11 @@ title: Lesson 3&#58; Add Cross Browser Support
 ---
 
 ## Overview
-Developers should always consider any progressive enhancements that can be added to enhance the user experience across browser platforms.
+Developers should always consider any progressive enhancements that could be added to enhance the user experience across browser platforms.
 
-In this lesson we'll learn about some HTML tags we can add to our apps to provide progressive enhancements for iOS and Windows.
+In this lesson we'll learn about some HTML elements we can add to our apps to provide progressive enhancements for iOS and Windows.
 
-Open the **www/index.html** file in your **todos-app-starter** app and go through the following sections.
+In your **todos-app-starter** app, open the **www/index.html** file and go through the following exercies.
 
 ### iOS Web App Customizations
 - Add the `apple-mobile-web-app-capable` meta tag to your app to run in **standalone** (aka fullscreen) mode when launched from the home screen:

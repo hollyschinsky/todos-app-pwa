@@ -38,7 +38,7 @@ You will want to find a place to host your apps securely. One easy option for st
     
        _You have just configured your firebase hosting project. In the process you will see that there are few files being added firebase.json, .firebaserc and database.rules.json. We will need to customize firebase.json but will do that later._
 
-   **An example of creating a project is shown below:** 
+   An example of creating a project is shown below:
 
    ![](images/firebase.png)
 
@@ -46,7 +46,7 @@ You will want to find a place to host your apps securely. One easy option for st
 
       `firebase deploy`
 
-   **Note the URL of the hosted app in the output below**
+   Note the URL of the hosted app in the output below:
 
    ![](images/firebase-deploy.png)
 
