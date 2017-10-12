@@ -4,7 +4,7 @@ title: Lesson 7&#58; Lighthouse & Debugging
 ---
 
 ## Overview
-Lighthouse is an open-source, automated tool for helping you to imrpove the performance, quality, and correctness of your web apps.
+Lighthouse is an open-source, automated tool for helping you to improve the performance, quality, and correctness of your web apps.
 
 When auditing a page, Lighthouse runs a barrage of tests against the page, and then generates a report on how well the page did. From here you can use the failing tests as indicators on what you can do to improve your app.
 
@@ -15,7 +15,7 @@ When auditing a page, Lighthouse runs a barrage of tests against the page, and t
 
 2. Run the report on your site, check out the score and areas where you lost points for tips.
 
-3. Increase your score by adding the following snippet before the closing `<\body>` tag to provide a more useful message indicating the situation when your pages can't load.
+3. Increase your score by adding the following snippet before the closing `<\body>` tag to provide a more useful message indicating the situation when your pages can't load, for instance when users have JavaScript turned off.
 
         <noscript>
             <p>Uh oh, JavaScript must be disabled and your content didn't load.</p>
