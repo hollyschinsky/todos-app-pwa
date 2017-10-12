@@ -35,7 +35,7 @@
   <script>   
   if ('serviceWorker' in navigator) {
       navigator.serviceWorker.register('service-worker.js')
-        .then(() => console.log('service worker installed'))
+        .then(() => console.log('Service worker installed!'))
         .catch(err => console.log('Error', err));
   }
   </script>  
@@ -46,7 +46,7 @@
   <title>My Todo App</title>
   
   <!-- See js/init-styles.js where we load F7 style sheets based on platform -->
-  <!--<link rel="stylesheet" href="css/app.css">-->  
+  <link rel="stylesheet" href="css/app.css">  
   <link rel="stylesheet" href="css/framework7-icons.css">
 
 </head>
@@ -140,8 +140,8 @@
   <template id="page-pending">
     <f7-page>
         <f7-block-title>{{ title }}</f7-block-title> 
-        <!-- USE FOR NETWORK INTERCEPT LESSON -->
-        <!-- <img src="img/logo.png" width="320" height="240">-->
+        <!-- KEEP FOR NETWORK INTERCEPT LESSON -->
+        <!-- <img src="img/logo.png"> -->
         <f7-list v-if="todos.length > 0">      
           <f7-list-item v-for="(todo, key) in todos" :key="key" v-if="displayItem(todo)"
             :checked="(todo.completed ? true : false)" :data-index="key"

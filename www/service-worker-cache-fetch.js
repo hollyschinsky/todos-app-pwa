@@ -2,16 +2,14 @@
 var cacheName = 'todos_offline_cache:v1'
 var goodCaches = [];
 goodCaches.push(cacheName);
-goodCaches.push('CordovaAssets'); // For Cordova Plugin cachine when config.xml set to true
+goodCaches.push('CordovaAssets'); // For Cordova Plugin caching when config.xml set to true
 
 // during the install phase you usually want to cache static assets
 self.addEventListener('install', function(e) {
-    console.log('[ServiceWorker] Install!!');
+    console.log('[ServiceWorker] Install!');
     e.waitUntil(
         caches.open(cacheName).then(function(cache) {
             return cache.addAll([
-                // If we don't add the root, we must navigatee to http://localhost:3000/index.html when offline
-                '/',  
                 '/index.html',
                 '/manifest.json',                
                 '/css/app.css',
@@ -20,11 +18,6 @@ self.addEventListener('install', function(e) {
                 '/js/app.js',
                 '/js/todos.js',
                 '/js/init-styles.js',
-                '/cordova.js',
-                '/cordova_plugins.js',
-                '/socket.io/socket.io.js',
-                '/plugins/cordova-plugin-statusbar/www/statusbar.js',
-                '/plugins/cordova-plugin-statusbar/src/browser/StatusBarProxy.js',
                 '/lib/framework7/css/framework7.ios.colors.min.css',
                 '/lib/framework7/css/framework7.ios.min.css',
                 '/lib/framework7/css/framework7.ios.rtl.min.css',
@@ -65,7 +58,7 @@ self.addEventListener('activate', function(event) {
         caches.keys().then(function(cacheNames) {
             return Promise.all(
                 cacheNames.map(function(cacheKey) {
-                    console.log("Cache key " + cacheKey);
+                    console.log("** Cache key " + cacheKey);
                     if (goodCaches.indexOf(cacheKey) === -1) {
                         console.log("Deleting cache " + cacheKey);
                         return caches.delete(cacheKey);    

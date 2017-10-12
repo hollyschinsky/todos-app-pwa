@@ -9,10 +9,10 @@ self.addEventListener('activate', function(event) {
 });
 
 self.addEventListener('fetch', function(event) {    
-  console.log('Network intercept example - checking URL for png ', event.request.url);
+  console.log('Network intercept example - checking this URL for png ', event.request.url);
   if (/\.png$/.test(event.request.url)) {
     event.respondWith(
-        fetch('http://addolo.com/wp-content/uploads/2017/01/90-stunning-silly-cat-pictures-image-inspirations-1280x960-wallpapersother-wallpapers-with-captions.jpg', 
+        fetch('https://static.boredpanda.com/blog/wp-content/uploads/2017/01/angry-cat-photography-02-5874a28aee900__700.jpg',
         { mode: 'no-cors'}).then(function(response) {
             console.log("Response from network intercept " + response);
             return response;
