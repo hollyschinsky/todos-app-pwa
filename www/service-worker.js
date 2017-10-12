@@ -67,7 +67,9 @@ self.addEventListener('activate', function(event) {
         caches.keys().then(function(cacheNames) {
             return Promise.all(
                 cacheNames.map(function(cacheKey) {
-                    console.log("** Cache key " + cacheKey);
+                    console.log("** Checking cache name " + cacheKey);
+                    // If the cache is not the current one being used we should
+                    // delete it because it's old and there is a limit on storage.
                     if (goodCaches.indexOf(cacheKey) === -1) {
                         console.log("Deleting cache " + cacheKey);
                         return caches.delete(cacheKey);    

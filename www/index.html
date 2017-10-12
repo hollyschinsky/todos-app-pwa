@@ -35,7 +35,7 @@
   <script>   
   if ('serviceWorker' in navigator) {
       navigator.serviceWorker.register('service-worker.js')
-        .then(() => console.log('Service worker installed!'))
+        .then(() => console.log('[index.html] Service worker installed!'))
         .catch(err => console.log('Error', err));
   }
   </script>  
