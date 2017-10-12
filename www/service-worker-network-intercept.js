@@ -1,5 +1,5 @@
-// Network interception example service-worker. Uncomment the logo.png in index.htm and run it with this
-// service worker
+// Network interception example service-worker. Uncomment the logo.png in index.html and run 
+// it with this service worker
 self.addEventListener('install', function(e) {
     console.log('[ServiceWorker] Install');    
 });
