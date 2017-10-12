@@ -1,21 +1,31 @@
 {
-  "name": "pwa-workshop",
-  "version": "1.0.0",
-  "description": "A todo app built with PhoneGap/Framework7/VueJS which also runs as a Progressive Web App with offline support.",
-  "repository": {
-    "type": "git",
-    "url": "https://github.com/hollyschinsky/todos-app-pwa"
-  },
-  "author": "Holly Schinsky",
-  "license": "Apache-2.0",
-  "keywords": [
-    "ecosystem:phonegap",
-    "ecosystem:cordova",
-    "cordova:template",
-    "phonegap:template"
-  ],
-  "bugs": {
-    "url": "https://github.com/hollyschinsky/todos-app-pwa/issues"
-  },
-  "homepage": "https://github.com/hollyschinsky/todos-app-pwa"
+    "name": "pwa-workshop",
+    "version": "1.0.0",
+    "description": "A todo app built with PhoneGap/Framework7/VueJS which also runs as a Progressive Web App with offline support.",
+    "repository": {
+        "type": "git",
+        "url": "https://github.com/hollyschinsky/todos-app-pwa"
+    },
+    "author": "Holly Schinsky",
+    "license": "Apache-2.0",
+    "keywords": [
+        "ecosystem:phonegap",
+        "ecosystem:cordova",
+        "cordova:template",
+        "phonegap:template"
+    ],
+    "bugs": {
+        "url": "https://github.com/hollyschinsky/todos-app-pwa/issues"
+    },
+    "homepage": "https://github.com/hollyschinsky/todos-app-pwa",
+    "cordova": {
+        "plugins": {
+            "cordova-plugin-statusbar": {},
+            "phonegap-plugin-service-worker": {}
+        }
+    },
+    "dependencies": {
+        "cordova-plugin-statusbar": "~2.2.3",
+        "phonegap-plugin-service-worker": "https://github.com/phonegap/phonegap-plugin-service-worker"
+    }
 }
