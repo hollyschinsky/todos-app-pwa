@@ -34,7 +34,7 @@ You will want to find a place to host your apps securely. One easy option for st
 
      - Configure as a single-page app (rewrite all urls to /index.html)? **y**
     
-     - File** www/index.html** already exists. Overwrite? (y/N) **N**
+     - File **www/index.html** already exists. Overwrite? (y/N) **N**
     
        _You have just configured your firebase hosting project. In the process you will see that there are few files being added firebase.json, .firebaserc and database.rules.json. We will need to customize firebase.json but will do that later._
 
